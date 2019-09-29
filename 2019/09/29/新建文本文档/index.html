@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>jq学习部分 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jq学习部分笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jq学习部分">
-<meta property="og:url" content="https://mcqer.github.io/2019/09/29/jq/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="嘿哈吼哈">
+<meta property="og:url" content="https://mcqer.github.io/2019/09/29/新建文本文档/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
-<meta property="og:description" content="jq学习部分笔记">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-29T04:15:27.680Z">
+<meta property="og:updated_time" content="2019-09-29T04:31:16.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jq学习部分">
-<meta name="twitter:description" content="jq学习部分笔记">
+<meta name="twitter:title" content="嘿哈吼哈">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -154,94 +151,12 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jq" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-新建文本文档" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      jq学习部分
-    </h1>
-  
-
-        
-        <a href="/2019/09/29/jq/" class="archive-article-date">
-  	<time datetime="2019-09-29T04:13:00.279Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> jq学习部分笔记</p>
-<a id="more"></a> 
-
-
-
-<h3 id="页面加载事件"><a href="#页面加载事件" class="headerlink" title="页面加载事件"></a>页面加载事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//点击按钮，显示一句话</span></span><br><span class="line"> <span class="comment">//页面全部加载完成后加载</span></span><br><span class="line">$(<span class="built_in">document</span>).load(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"111"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="built_in">document</span>).load(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"2222"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//第二种 ---比上面的快 在页面出现基本元素后就加载成功</span></span><br><span class="line"> $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"1"</span>);</span><br><span class="line"> &#125;);</span><br><span class="line"> $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"2"</span>);</span><br><span class="line"> &#125;);</span><br><span class="line"> <span class="comment">//第三种 ---也是页面中基本元素加载后就触发</span></span><br><span class="line"> jQuery(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"页面加载了1"</span>);</span><br><span class="line"> &#125;);</span><br><span class="line"> jQuery(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"页面加载了222"</span>);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="jQuery和DOM的转换"><a href="#jQuery和DOM的转换" class="headerlink" title="jQuery和DOM的转换"></a>jQuery和DOM的转换</h2><h3 id="jquery对象是一个数组对象，可以通过【index】的方法得到相应的DOM对象。"><a href="#jquery对象是一个数组对象，可以通过【index】的方法得到相应的DOM对象。" class="headerlink" title="jquery对象是一个数组对象，可以通过【index】的方法得到相应的DOM对象。"></a>jquery对象是一个数组对象，可以通过【index】的方法得到相应的DOM对象。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $cr = $(<span class="string">"p"</span>);   <span class="comment">//jquery对象</span></span><br><span class="line"><span class="keyword">var</span> cr = $cr[<span class="number">1</span>];    <span class="comment">//dom对象</span></span><br><span class="line"><span class="keyword">var</span> ct = $cr.get(<span class="number">0</span>)   <span class="comment">//第二种转换为DOM对象的方式</span></span><br><span class="line">cr.innerHTML = <span class="string">"you"</span>    <span class="comment">//检测是否转换成功，可以用DOM方法 输出结果为第二个my改成了you</span></span><br><span class="line">ct.innerHTML = <span class="string">'fuck'</span>   <span class="comment">//输出结果第一个my改成了fuck</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>对于一个DOM对象,只需要用$()把DOM对象给包装起来，就可以获得一个jquery对象了，方式为$(DOM对象)。</strong></p>
-<p>var cr = document.getElementsByTagName(“p”)  //DOM对象<br>    var $cr = $(cr);     //jquery对象</p>
-<ul>
-<li>$cr.eq(0).(“fuck”);  //检测是否转换成功，可以用jquery方法 输出结果为第二个my改成了fuck<pre><code>$cr.eq(1).html(&quot;you&quot;); //输出结果为my改成you</code></pre></li>
-</ul>
-<h2 id="jQuery获取页面元素的方式"><a href="#jQuery获取页面元素的方式" class="headerlink" title="jQuery获取页面元素的方式"></a>jQuery获取页面元素的方式</h2><h2 id="1-正常"><a href="#1-正常" class="headerlink" title="1. 正常"></a>1. 正常</h2><h3 id="1-通过id"><a href="#1-通过id" class="headerlink" title="1  通过id"></a>1  通过id</h3><p>$（“#id属性的值”）；</p>
-<h3 id="2-通过类名称"><a href="#2-通过类名称" class="headerlink" title="2  通过类名称"></a>2  通过类名称</h3><p>$(“。类的class的值”);</p>
-<h3 id="3-通过标签"><a href="#3-通过标签" class="headerlink" title="3    通过标签"></a>3    通过标签</h3><p>$(“标签名字”); 可以获取所有的</p>
-<h3 id="4-获取全部"><a href="#4-获取全部" class="headerlink" title="4  获取全部"></a>4  获取全部</h3><p>$(“*”);  获取所有元素</p>
-<h2 id="2元素属性选择器"><a href="#2元素属性选择器" class="headerlink" title="2元素属性选择器"></a>2元素属性选择器</h2><p>$(“[href]”);  所有带href的属性的元素</p>
-<p>$(“[href=‘#’]”); href 的属性值等于“#” 的元素</p>
-<p>$(“[href!=‘#’]”);  href 的属性值不等于“#” 的元素</p>
-<p>$(“[href=‘.jpg’]”);  href 的属性的值包含以”。jpg”结尾的元素</p>
-<h2 id="3-元素定位-基本过滤器"><a href="#3-元素定位-基本过滤器" class="headerlink" title="3   元素定位(基本过滤器)"></a>3   元素定位(基本过滤器)</h2><p>:first  $(“p:first”)   第一个p元素</p>
-<p>  :last  $(“p:last”)   最后一个p元素</p>
-<p>:even  $(“tr:even”)  所有偶数的tr元素</p>
-<p>:odd  $(“tr:odd”)  所有奇数的tr元素</p>
-<p>:eq(index)   $(“ul li :eq(3)”)  ul中 第四个元素 从index0开始</p>
-<p>:gt(no)  $(“ul li:gt(3)”)  列出 index大于三的元素</p>
-<p>:lt(no)     $(“ul li:lt(3)”)  列出index小于三的元素</p>
-<p>:not(seletor)  $(“input:not(:empty)”)  所有不为空的input元素</p>
-<h2 id="4-：元素过滤器选择器"><a href="#4-：元素过滤器选择器" class="headerlink" title="4 ：元素过滤器选择器"></a>4 ：元素过滤器选择器</h2><p>:contains(text)    $(:contains(‘wwwww’))   包含指定自字符的所有元素</p>
-<p>:empty             $(“:empty”)      元素节点的所有元素</p>
-<h3 id="可见性的过滤器选择器"><a href="#可见性的过滤器选择器" class="headerlink" title="可见性的过滤器选择器"></a>可见性的过滤器选择器</h3><p>:hidden    $(p:hidden)   所有隐藏的p元素</p>
-<p>:visible    $(“table:visible”)   所有可见的表格</p>
-<p>$(this).next(“li”)  获取下一个li的元素</p>
-<p>$(this).prev(“li”)  获取上一个元素</p>
-<p>$(this).nextAll(“li”)   获取li后面的所有兄弟元素</p>
-<p>$(this).prevAll(“li”)   获取li前面所有的兄弟元素</p>
-<p>$(this).siblings(“li”)  获取当前li的所有兄弟元素  除了自己</p>
-<h2 id="1。操作样式"><a href="#1。操作样式" class="headerlink" title="1。操作样式"></a>1。操作样式</h2><h3 id="1-css操作"><a href="#1-css操作" class="headerlink" title="1 css操作"></a>1 css操作</h3><p>设置单个样式</p>
-<p>设置多个样式</p>
-<p>获取样式</p>
-<h3 id="2-class-操作"><a href="#2-class-操作" class="headerlink" title="2 class 操作"></a>2 class 操作</h3><p>addClass（name） ：添加类</p>
-<p>removeClass （name） ：移除类</p>
-<p>hasCLass（name） ：判断类</p>
-<p>toggleClass（name）：切换类</p>
-<h2 id="2-操作属性"><a href="#2-操作属性" class="headerlink" title="2.操作属性"></a>2.操作属性</h2><h3 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h3><p>设置单个属性</p>
-<p>设置多个属性</p>
-<p>获取属性</p>
-<h3 id="prop"><a href="#prop" class="headerlink" title="prop"></a>prop</h3><p>对于布尔类型的属性 disabled ，selected ，checked 只用prop </p>
-<p>removeAttr（name） ：移除某个属性</p>
-<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="3组基本动画"><a href="#3组基本动画" class="headerlink" title="3组基本动画"></a>3组基本动画</h3><p>show/hide   slideDown/slideUp/slideToggle</p>
-<p>fadeIn/fadeOut/fadeToggle</p>
-<h3 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h3><p>animate(prop. [speed], [swing/linear],  [callback] )</p>
-<h3 id="停止动画"><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h3><p>stop ();</p>
-<h2 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h2><h3 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h3><p>$(“</p><p></p>“)<p></p>
-<h3 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h3><p>append appendTo prepend  prependTo  after before </p>
-<h3 id="清空节点"><a href="#清空节点" class="headerlink" title="清空节点"></a>清空节点</h3><p>empty</p>
-<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>remove</p>
-<h3 id="克隆节点"><a href="#克隆节点" class="headerlink" title="克隆节点"></a>克隆节点</h3><p>clone</p>
-<p>slideDown（）滑出</p>
-<p>slideUp（）滑入</p>
-<p>slideToggle（）切换滑入和滑出</p>
-<p>fadeIn（）淡入</p>
-<p>fadeOut（）淡出</p>
-<p>fadeToggle（）切换的淡入淡出</p>
-<p>fadeTo（时间，透明值结束）</p>
-
+        
       
 
       
@@ -320,7 +235,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2019/09/29/jq/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2019/09/29/新建文本文档/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +249,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/29/新建文本文档/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/29/h5/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">H5学习</div>
+    <a href="/2019/09/29/jq/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jq学习部分</div>
       <i class="icon-circle-right"></i>
     </a>
   
