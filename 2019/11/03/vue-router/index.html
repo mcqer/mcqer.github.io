@@ -8,13 +8,17 @@
   <link rel="dns-prefetch" href="https://mcqer.github.io">
   <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1title: Vue-router  [TOC] router导航解析过程">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2019/11/03/vue-router/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="1title: Vue-router  [TOC] router导航解析过程">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-03T12:43:21.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="1title: Vue-router  [TOC] router导航解析过程">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,22 +154,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-vue-router" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: Vue-router</span><br></pre></td></tr></table></figure>
+           <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: Vue-router</span><br></pre></td></tr></table></figure>
 
 <p>[TOC]</p>
-<h2 id="router导航解析过程"><a href="#router导航解析过程" class="headerlink" title="router导航解析过程"></a>router导航解析过程</h2>
-        
-          <a class="article-more-a" href="/2019/11/03/vue-router/#more">more >></a>
-        
+<h2 id="router导航解析过程"><a href="#router导航解析过程" class="headerlink" title="router导航解析过程"></a>router导航解析过程</h2><a id="more"></a>
+
+<h3 id="1-回收守卫beforeRouteLeave"><a href="#1-回收守卫beforeRouteLeave" class="headerlink" title="1. 回收守卫beforeRouteLeave"></a>1. 回收守卫beforeRouteLeave</h3><p>​            在原页面跳转到新的页面之前触发的函数 写在原页面中，每次离开这个页面都会触发</p>
+<h3 id="2-前置守卫-beforeEach"><a href="#2-前置守卫-beforeEach" class="headerlink" title="2. 前置守卫 beforeEach"></a>2. 前置守卫 beforeEach</h3><p>​         一般用于检测用户是否登录，如果登录的话就是有一个判断，</p>
+<p>​        当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完        之前一直处于 <strong>等待中</strong>。</p>
+<h3 id="3-重用组件调用beforeRouteUpdate"><a href="#3-重用组件调用beforeRouteUpdate" class="headerlink" title="3. 重用组件调用beforeRouteUpdate"></a>3. 重用组件调用beforeRouteUpdate</h3><p>​            用于组件复用，路由跳转    </p>
+<p>​            当前路由改变、但是该组件要被复用</p>
+<p>​            而beforeRouteUpdate是路由更新时触发，从主页进入登录界面不会触发这个钩子函数，一个父路由下的            子路由跳转会触发这个钩子函数。</p>
+<h3 id="4-调用路由独享的守卫-beforeEnter"><a href="#4-调用路由独享的守卫-beforeEnter" class="headerlink" title="4. 调用路由独享的守卫 beforeEnter"></a>4. 调用路由独享的守卫 beforeEnter</h3><p>​            实现路由切换时触发相应组件的beforeEnter事件。</p>
+<h3 id="5-即将进入的页面组件-里调用-beforeRouteEnter"><a href="#5-即将进入的页面组件-里调用-beforeRouteEnter" class="headerlink" title="5.  即将进入的页面组件 里调用 beforeRouteEnter"></a>5.  即将进入的页面组件 里调用 beforeRouteEnter</h3><p>注意 <code>beforeRouteEnter</code> 是支持给 <code>next</code> 传递回调的唯一守卫。对于 <code>beforeRouteUpdate</code> 和 <code>beforeRouteLeave</code> 来说，<code>this</code> 已经可用了，所以<strong>不支持</strong>传递回调，因为没有必要了。</p>
+<p>​            在渲染该组件的对应路由被 confirm 前调用<br>​            不！能！获取组件实例 <code>this</code><br>​            因为当守卫执行前，组件实例还没被创建</p>
+<p>​            beforeRouteEnter<strong>守卫不能</strong> 访问 <code>this</code>，因为守卫在导航确认前被调用,因此即将登场的新组件还没被创建</p>
+<p>​            不过，你可以通过传一个回调给 <code>next</code>来访问组件实例。在导航被确认的时候执行回调，并且把组件实例作            为回调方法的参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">  next(<span class="function"><span class="params">vm</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过 `vm` 访问组件实例</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-beforeRouteUpdate"><a href="#6-beforeRouteUpdate" class="headerlink" title="6. beforeRouteUpdate"></a>6. beforeRouteUpdate</h3><p>​            在当前路由改变，但是该组件被复用时调用<br>​            举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，<br>            由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。<br>            可以访问组件实例 `this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">  <span class="comment">// just use `this`</span></span><br><span class="line">  <span class="keyword">this</span>.name = to.params.name</span><br><span class="line">  next()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-beforeRouteLeave"><a href="#7-beforeRouteLeave" class="headerlink" title="7. beforeRouteLeave"></a>7. beforeRouteLeave</h3><p>​            导航离开该组件的对应路由时调用</p>
+<p>​            这个离开守卫通常用来禁止用户在还未保存修改前突然离开。该导航可以通过 <code>next(false)</code> 来取消。</p>
+<p>​            可以访问组件实例 <code>this</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteLeave (to, <span class="keyword">from</span> , next) &#123;</span><br><span class="line">  <span class="keyword">const</span> answer = <span class="built_in">window</span>.confirm(<span class="string">'Do you really want to leave? you have unsaved changes!'</span>)</span><br><span class="line">  <span class="keyword">if</span> (answer) &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next(<span class="literal">false</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>导航被触发</p>
+</li>
+<li><p>使失活的组件中 （即为离开页面的组件）里调用离开收守卫 beforeRouteLeave</p>
+</li>
+<li><p>调用全局的前置守卫 beforeEach</p>
+</li>
+<li><p>在重用组件调用beforeRouteUpdate</p>
+</li>
+<li><p>调用路由独享的守卫 beforeEnter</p>
+</li>
+<li><p>解析异步路由组件</p>
+</li>
+<li><p>再被激活的组件 即将进入的页面组件 里调用 beforeRouteEnter</p>
+</li>
+<li><p>调用全局的解析守卫 beforeREsolve</p>
+</li>
+<li><p>导航被确认后 调用 afterEach</p>
+</li>
+<li><p>触发DOM更新 用创建好的实例调用beforeRouterEnter的实例</p>
+</li>
+</ol>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -174,16 +239,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/vue-router/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2019/11/03/vue-router/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/03/vue父子组件通信/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue父子组件通信</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -203,336 +327,14 @@
 
 
 
-
   
-    <article id="post-vue父子组件通信" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h2 id="三种父子组件通信-prop-emit-ref"><a href="#三种父子组件通信-prop-emit-ref" class="headerlink" title="三种父子组件通信 prop $emit $ref"></a>三种父子组件通信 prop $emit $ref</h2>
-        
-          <a class="article-more-a" href="/2019/11/03/vue父子组件通信/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/vue父子组件通信/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-过滤器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vue过滤器的定义，抽离，使用</p>
-        
-          <a class="article-more-a" href="/2019/11/03/过滤器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/过滤器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jq" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/jq/">jq学习部分</a>
-    </h1>
   
 
-        
-        <a href="/2019/09/29/jq/" class="archive-article-date">
-  	<time datetime="2019-09-29T04:13:00.279Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> jq学习部分笔记</p>
-        
-          <a class="article-more-a" href="/2019/09/29/jq/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/29/jq/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-h5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/h5/">H5学习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/29/h5/" class="archive-article-date">
-  	<time datetime="2019-09-29T04:10:33.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>H5自学的一些</p>
-        
-          <a class="article-more-a" href="/2019/09/29/h5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/29/h5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/搭建个人博客/">个人博客搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/29/搭建个人博客/" class="archive-article-date">
-  	<time datetime="2019-09-29T02:45:29.895Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​    这也算是本人的第一个hexo框架博客，其中有我同学的帮助，感谢。</p>
-<p>​    接下来是搭建过程，全长半个小时，博客就可以搭建成功。</p>
-<p>​</p>
-        
-          <a class="article-more-a" href="/2019/09/29/搭建个人博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/29/搭建个人博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -555,8 +357,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
