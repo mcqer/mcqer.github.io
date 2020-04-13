@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>数据库原理第一章笔记以及题解 | 嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+  <meta name="description" content="数据库原理笔记第一章 ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库原理第一章笔记以及题解">
+<meta property="og:url" content="https://mcqer.github.io/2020/04/13/第一章/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="数据库原理笔记第一章 ​">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-13T09:37:44.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:title" content="数据库原理第一章笔记以及题解">
+<meta name="twitter:description" content="数据库原理笔记第一章 ​">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,245 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-第一章" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库原理第一章笔记以及题解
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/第一章/" class="archive-article-date">
+  	<time datetime="2020-04-13T02:51:39.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  数据库原理笔记第一章</p>
+<p>​    <a id="more"></a></p>
+<h2 id="网课"><a href="#网课" class="headerlink" title="网课"></a>网课</h2><h4 id="数据模型的组成要素"><a href="#数据模型的组成要素" class="headerlink" title="数据模型的组成要素"></a>数据模型的组成要素</h4><p>数据操作是对系统动态特性的描述</p>
+<h4 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h4><p> 概念模型不依赖与某一个DBMS支持的数据类型，概念模型可以转换为计算机上某一个DBMS支持的特定数据模型</p>
+<p>特点 ： 1 具有较强的语义表达能力，能够方便直接地表达应用中的的各种语义只是</p>
+<p>​        用E-R图来描述现实世界的概念模型</p>
+<h4 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h4><p>采用树形结构 </p>
+<h5 id="层次模型满足下面两个"><a href="#层次模型满足下面两个" class="headerlink" title="层次模型满足下面两个"></a>层次模型满足下面两个</h5><p>1 有且只有一个节点无双亲，称为根节点</p>
+<p>2 除根节点外，其他节点有且只有一个双亲结点    </p>
+<p>CRUD功能 满足 层次模型的完整性</p>
+<p>插入： 没有双亲结点不能插入子女节点</p>
+<p>删除：删除双亲结点，同时删除子女结点</p>
+<p>更新：应更新所有记录，以免出现数据不一致</p>
+<p>查询：通过存取路劲实现</p>
+<h5 id="层次模型优点："><a href="#层次模型优点：" class="headerlink" title="层次模型优点："></a>层次模型优点：</h5><p>结构简单，完整性好，适用于非实体之间联系固定且预先定义好的应用系统</p>
+<h5 id="层次模型缺点"><a href="#层次模型缺点" class="headerlink" title="层次模型缺点:"></a>层次模型缺点:</h5><p>应用范围有限，插入和删除限制较多，查询子女节点必须通过双亲节点</p>
+<h4 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h4><p>采用网状模型</p>
+<p>层次模型是网状模型的特例</p>
+<p>典型的是DBTG系统</p>
+<h5 id="网状模型满足以下要求"><a href="#网状模型满足以下要求" class="headerlink" title="网状模型满足以下要求"></a>网状模型满足以下要求</h5><p>可以有一个以上的节点无双亲</p>
+<p>至少有一个以上节点有多余一个双亲</p>
+<h5 id="网状模型优点-："><a href="#网状模型优点-：" class="headerlink" title="网状模型优点 ："></a>网状模型优点 ：</h5><p>能够直接的描述现实世界，如果一个节点可以有多个双亲</p>
+<p>具有良好的性能，存取效率较高</p>
+<h5 id="网状模型缺点："><a href="#网状模型缺点：" class="headerlink" title="网状模型缺点："></a>网状模型缺点：</h5><p>结构复杂 随着应用环境的扩大，会越来越大</p>
+<p>DDL DML语言复杂，用户不容易使用</p>
+<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系模型是通过满足一定条件的二维表格，来表示实体集合及数据之间联系的一种数据模型</p>
+<p>具有坚实的数学基础和较严密的理论</p>
+<h5 id="关系的术语"><a href="#关系的术语" class="headerlink" title="关系的术语"></a>关系的术语</h5><p>关系： 一张二维表格</p>
+<p>元祖：表中的一行</p>
+<p>属性：表中的一列，每个属性都有一个属性名</p>
+<p>主键：唯一表示一个元祖的属性组</p>
+<p>域：属性的取值范围</p>
+<p>分量：元祖的一个属性值</p>
+<p>关系模式： 对关系的描述</p>
+<h5 id="关系模型操作："><a href="#关系模型操作：" class="headerlink" title="关系模型操作："></a>关系模型操作：</h5><p>值需要指出干什么，不必指出怎么做，不必指出存取路径</p>
+<h5 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h5><p>实体完整性</p>
+<p>参照完整性</p>
+<p>用户定义完整性</p>
+<h5 id="关系模型优点"><a href="#关系模型优点" class="headerlink" title="关系模型优点"></a>关系模型优点</h5><p>理论扎实：集合论，关系数据导论</p>
+<p>概念单一：实体用关系表示，联系也用关系表示</p>
+<p>存取路径对用户是透明的</p>
+<p>规范化：最基本的要求是每个属性不可再分割</p>
+<p>数据用表表示，查询结果也用表表示，表是一个集合，查询结果也是集合，，操作简单，用户不必知道存取路径</p>
+<h5 id="关系模型缺点"><a href="#关系模型缺点" class="headerlink" title="关系模型缺点"></a>关系模型缺点</h5><p>效率不如非关系模型，因此需要进行查询优化，增加了DBMS开发难度</p>
+<h3 id="DBS数据库系统"><a href="#DBS数据库系统" class="headerlink" title="DBS数据库系统"></a>DBS数据库系统</h3><h4 id="结构分为"><a href="#结构分为" class="headerlink" title="结构分为"></a>结构分为</h4><p>单用户结构，主从式结构，分布是结构，客户/服务器 浏览器/应用服务器</p>
+<h4 id="型和值的概念"><a href="#型和值的概念" class="headerlink" title="型和值的概念"></a>型和值的概念</h4><p>型是指对数据结构和属性的说明</p>
+<p>值是型的具体取值，是数据库的一个实例</p>
+<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><p>用于描述数据库的型 不涉及具体值</p>
+<h3 id="三级模式两层映像"><a href="#三级模式两层映像" class="headerlink" title="三级模式两层映像"></a>三级模式两层映像</h3><p><strong>三级模式由模式 外模式 内模式</strong></p>
+<p>两层映像 </p>
+<p><strong>模式到外模式之间的映像</strong>  逻辑独立性</p>
+<p><strong>模式到内模式之间的映像</strong>  物理独立性</p>
+<p>模式（也称逻辑模式）</p>
+<p>一个数据库只有一个模式</p>
+<h5 id="模式的地位："><a href="#模式的地位：" class="headerlink" title="模式的地位："></a>模式的地位：</h5><p> 是数据库系统模式结构的中间层</p>
+<p>与数据的物理存储细节和硬件环境无关</p>
+<p>与具体的应用程序，开发工具及高级程序设计语言无关</p>
+<h4 id="外模式"><a href="#外模式" class="headerlink" title="外模式"></a>外模式</h4><p>也称为子模式或者用户模式</p>
+<p>数据库用户（包括应用程序员和最终用户）使用的是局部数据的逻辑结构和特征的描述</p>
+<p>数据库用户的数据视图，是与某一个应用有关的数据的逻辑表示</p>
+<p>由模式映像出来的</p>
+<p>不同用户的外模式可以相互覆盖  同一个用户只可以使用一个外模式 </p>
+<h4 id="内模式"><a href="#内模式" class="headerlink" title="内模式"></a>内模式</h4><p>是全体数据库的内部表示  是数据库管理员（DBA）使用  一个数据库只可以有一个内模式</p>
+<p>内模式是数据物理结构和存储方式的描述</p>
+<p>是数据库在数据库内部的表示方式</p>
+<h4 id="模式到外模式之间的映像"><a href="#模式到外模式之间的映像" class="headerlink" title="模式到外模式之间的映像"></a>模式到外模式之间的映像</h4><p>程序改变时，由DBA修改模式到外模式之间的映像 用户程序是根据外模式编写的 </p>
+<p>不修改外模式，保证数据和程序之间的逻辑独立性</p>
+<h4 id="模式到内模式之间的映像"><a href="#模式到内模式之间的映像" class="headerlink" title="模式到内模式之间的映像"></a>模式到内模式之间的映像</h4><p>由DBA修改模式到内模式之间的映像  </p>
+<p>使用户操作从逻辑转向物理</p>
+<h2 id="测验"><a href="#测验" class="headerlink" title="测验"></a>测验</h2><p>1  数据库系统的核心是： 数据库管理软件 DBMS </p>
+<p>2  数据库系统的特点   </p>
+<p> 数据结构化</p>
+<p>数据由DBMS统一管理和控制</p>
+<p>数据独立性高    </p>
+<p>3 概念模型是现实世界的第一层抽象，这一类型中最著名的模型是     实体-联系模型</p>
+<p>4 保证数据库逻辑数据独立性， 需要修改的是  模式与外模式之间的映像  </p>
+<pre><code>外模式逻辑 内模式物理</code></pre><p>5  数据库（DB）是存储在计算机内有结构的数据的集合</p>
+<p>​        数据库系统（DBS）定义 通常由<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>、<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>和<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员组成。其<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>主要包括<a href="https://baike.baidu.com/item/操作系统" target="_blank" rel="noopener">操作系统</a>、各种<a href="https://baike.baidu.com/item/宿主语言" target="_blank" rel="noopener">宿主语言</a>、实用<a href="https://baike.baidu.com/item/程序" target="_blank" rel="noopener">程序</a>以及<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>。<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>由<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>统一管理，数据的插入、修改和检索均要通过数据库管理系统进行。<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员负责创建、监控和维护整个<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>，使数据能被任何有权使用的人有效使用</p>
+<p>​    数据库管理系统（DBMS） 定义用于建立、使用和维护<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>，简称<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>。它对<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>进行统一的管理和<a href="https://baike.baidu.com/item/控制/948689" target="_blank" rel="noopener">控制</a>，以保证<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>的安全性和完整性。用户通过<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>访问<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>中的数据，<a href="https://baike.baidu.com/item/数据库管理员/1216449" target="_blank" rel="noopener">数据库管理员</a>也通过<a href="https://baike.baidu.com/item/DBMS/1239170" target="_blank" rel="noopener">DBMS</a>进行数据库的维护工作。</p>
+<p>6 数据库中存储的是 数据以及数据之间的联系   </p>
+<p>​        一对多   多对一    一对一</p>
+<p>7 DBS DB DBMS  三者的关系  </p>
+<p>​              DBS 包含 DB DBMS   还有DBA（管理员） 用户</p>
+<p>8 数据库中产生数据不一致的根本原因是</p>
+<pre><code>数据亢余    </code></pre><p>​        数据库的完整性有哪三个 ： 实体完整性，域完整性参照完整性</p>
+<p>9 数据库管理系统是系统软件  </p>
+<p>​        DBMS 和（系统）OS的关系   DBMS调用了OS的功能</p>
+<p>10  数据库管理系统可以实现对数据库中增删查改  这功能叫  数据操操纵功能</p>
+<p>​        数据的定义功能  create database/table/view</p>
+<p>​            定义基表 视图 索引</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/13/第一章/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/03/vue-router/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue-router</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +415,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
