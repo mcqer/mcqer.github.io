@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>数据库原理第一章笔记以及题解 | 嘿哈吼哈</title>
+  <title>Vue文件 | 嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库原理笔记第一章 ​">
+  <meta name="description" content="vue-ul文件分类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库原理第一章笔记以及题解">
-<meta property="og:url" content="https://mcqer.github.io/2020/04/13/第一章/index.html">
+<meta property="og:title" content="Vue文件">
+<meta property="og:url" content="https://mcqer.github.io/2020/04/14/过滤器 - 副本/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
-<meta property="og:description" content="数据库原理笔记第一章 ​">
+<meta property="og:description" content="vue-ul文件分类">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-13T09:51:11.472Z">
+<meta property="og:updated_time" content="2020-04-14T11:02:29.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库原理第一章笔记以及题解">
-<meta name="twitter:description" content="数据库原理笔记第一章 ​">
+<meta name="twitter:title" content="Vue文件">
+<meta name="twitter:description" content="vue-ul文件分类">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -154,116 +154,103 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第一章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-过滤器 - 副本" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库原理第一章笔记以及题解
+      Vue文件
     </h1>
   
 
         
-        <a href="/2020/04/13/第一章/" class="archive-article-date">
-  	<time datetime="2020-04-13T02:51:39.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/14/过滤器 - 副本/" class="archive-article-date">
+  	<time datetime="2020-04-14T11:01:11.249Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  数据库原理笔记第一章</p>
-<p>​    <a id="more"></a></p>
-<h2 id="网课"><a href="#网课" class="headerlink" title="网课"></a>网课</h2><h4 id="数据模型的组成要素"><a href="#数据模型的组成要素" class="headerlink" title="数据模型的组成要素"></a>数据模型的组成要素</h4><p>数据操作是对系统动态特性的描述</p>
-<h4 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h4><p> 概念模型不依赖与某一个DBMS支持的数据类型，概念模型可以转换为计算机上某一个DBMS支持的特定数据模型</p>
-<p>特点 ： 1 具有较强的语义表达能力，能够方便直接地表达应用中的的各种语义只是</p>
-<p>​        用E-R图来描述现实世界的概念模型</p>
-<h4 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h4><p>采用树形结构 </p>
-<h5 id="层次模型满足下面两个"><a href="#层次模型满足下面两个" class="headerlink" title="层次模型满足下面两个"></a>层次模型满足下面两个</h5><p>1 有且只有一个节点无双亲，称为根节点</p>
-<p>2 除根节点外，其他节点有且只有一个双亲结点    </p>
-<p>CRUD功能 满足 层次模型的完整性</p>
-<p>插入： 没有双亲结点不能插入子女节点</p>
-<p>删除：删除双亲结点，同时删除子女结点</p>
-<p>更新：应更新所有记录，以免出现数据不一致</p>
-<p>查询：通过存取路劲实现</p>
-<h5 id="层次模型优点："><a href="#层次模型优点：" class="headerlink" title="层次模型优点："></a>层次模型优点：</h5><p>结构简单，完整性好，适用于非实体之间联系固定且预先定义好的应用系统</p>
-<h5 id="层次模型缺点"><a href="#层次模型缺点" class="headerlink" title="层次模型缺点:"></a>层次模型缺点:</h5><p>应用范围有限，插入和删除限制较多，查询子女节点必须通过双亲节点</p>
-<h4 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h4><p>采用网状模型</p>
-<p>层次模型是网状模型的特例</p>
-<p>典型的是DBTG系统</p>
-<h5 id="网状模型满足以下要求"><a href="#网状模型满足以下要求" class="headerlink" title="网状模型满足以下要求"></a>网状模型满足以下要求</h5><p>可以有一个以上的节点无双亲</p>
-<p>至少有一个以上节点有多余一个双亲</p>
-<h5 id="网状模型优点-："><a href="#网状模型优点-：" class="headerlink" title="网状模型优点 ："></a>网状模型优点 ：</h5><p>能够直接的描述现实世界，如果一个节点可以有多个双亲</p>
-<p>具有良好的性能，存取效率较高</p>
-<h5 id="网状模型缺点："><a href="#网状模型缺点：" class="headerlink" title="网状模型缺点："></a>网状模型缺点：</h5><p>结构复杂 随着应用环境的扩大，会越来越大</p>
-<p>DDL DML语言复杂，用户不容易使用</p>
-<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系模型是通过满足一定条件的二维表格，来表示实体集合及数据之间联系的一种数据模型</p>
-<p>具有坚实的数学基础和较严密的理论</p>
-<h5 id="关系的术语"><a href="#关系的术语" class="headerlink" title="关系的术语"></a>关系的术语</h5><p>关系： 一张二维表格</p>
-<p>元祖：表中的一行</p>
-<p>属性：表中的一列，每个属性都有一个属性名</p>
-<p>主键：唯一表示一个元祖的属性组</p>
-<p>域：属性的取值范围</p>
-<p>分量：元祖的一个属性值</p>
-<p>关系模式： 对关系的描述</p>
-<h5 id="关系模型操作："><a href="#关系模型操作：" class="headerlink" title="关系模型操作："></a>关系模型操作：</h5><p>值需要指出干什么，不必指出怎么做，不必指出存取路径</p>
-<h5 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h5><p>实体完整性</p>
-<p>参照完整性</p>
-<p>用户定义完整性</p>
-<h5 id="关系模型优点"><a href="#关系模型优点" class="headerlink" title="关系模型优点"></a>关系模型优点</h5><p>理论扎实：集合论，关系数据导论</p>
-<p>概念单一：实体用关系表示，联系也用关系表示</p>
-<p>存取路径对用户是透明的</p>
-<p>规范化：最基本的要求是每个属性不可再分割</p>
-<p>数据用表表示，查询结果也用表表示，表是一个集合，查询结果也是集合，，操作简单，用户不必知道存取路径</p>
-<h5 id="关系模型缺点"><a href="#关系模型缺点" class="headerlink" title="关系模型缺点"></a>关系模型缺点</h5><p>效率不如非关系模型，因此需要进行查询优化，增加了DBMS开发难度</p>
-<h3 id="DBS数据库系统"><a href="#DBS数据库系统" class="headerlink" title="DBS数据库系统"></a>DBS数据库系统</h3><h4 id="结构分为"><a href="#结构分为" class="headerlink" title="结构分为"></a>结构分为</h4><p>单用户结构，主从式结构，分布是结构，客户/服务器 浏览器/应用服务器</p>
-<h4 id="型和值的概念"><a href="#型和值的概念" class="headerlink" title="型和值的概念"></a>型和值的概念</h4><p>型是指对数据结构和属性的说明</p>
-<p>值是型的具体取值，是数据库的一个实例</p>
-<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><p>用于描述数据库的型 不涉及具体值</p>
-<h3 id="三级模式两层映像"><a href="#三级模式两层映像" class="headerlink" title="三级模式两层映像"></a>三级模式两层映像</h3><p><strong>三级模式由模式 外模式 内模式</strong></p>
-<p>两层映像 </p>
-<p><strong>模式到外模式之间的映像</strong>  逻辑独立性</p>
-<p><strong>模式到内模式之间的映像</strong>  物理独立性</p>
-<p>模式（也称逻辑模式）</p>
-<p>一个数据库只有一个模式</p>
-<h5 id="模式的地位："><a href="#模式的地位：" class="headerlink" title="模式的地位："></a>模式的地位：</h5><p> 是数据库系统模式结构的中间层</p>
-<p>与数据的物理存储细节和硬件环境无关</p>
-<p>与具体的应用程序，开发工具及高级程序设计语言无关</p>
-<h4 id="外模式"><a href="#外模式" class="headerlink" title="外模式"></a>外模式</h4><p>也称为子模式或者用户模式</p>
-<p>数据库用户（包括应用程序员和最终用户）使用的是局部数据的逻辑结构和特征的描述</p>
-<p>数据库用户的数据视图，是与某一个应用有关的数据的逻辑表示</p>
-<p>由模式映像出来的</p>
-<p>不同用户的外模式可以相互覆盖  同一个用户只可以使用一个外模式 </p>
-<h4 id="内模式"><a href="#内模式" class="headerlink" title="内模式"></a>内模式</h4><p>是全体数据库的内部表示  是数据库管理员（DBA）使用  一个数据库只可以有一个内模式</p>
-<p>内模式是数据物理结构和存储方式的描述</p>
-<p>是数据库在数据库内部的表示方式</p>
-<h4 id="模式到外模式之间的映像"><a href="#模式到外模式之间的映像" class="headerlink" title="模式到外模式之间的映像"></a>模式到外模式之间的映像</h4><p>程序改变时，由DBA修改模式到外模式之间的映像 用户程序是根据外模式编写的 </p>
-<p>不修改外模式，保证数据和程序之间的逻辑独立性</p>
-<h4 id="模式到内模式之间的映像"><a href="#模式到内模式之间的映像" class="headerlink" title="模式到内模式之间的映像"></a>模式到内模式之间的映像</h4><p>由DBA修改模式到内模式之间的映像  </p>
-<p>使用户操作从逻辑转向物理</p>
-<h2 id="测验"><a href="#测验" class="headerlink" title="测验"></a>测验</h2><p>1  数据库系统的核心是： 数据库管理软件 DBMS </p>
-<p>2  数据库系统的特点   </p>
-<p> 数据结构化</p>
-<p>数据由DBMS统一管理和控制</p>
-<p>数据独立性高    </p>
-<p>3 概念模型是现实世界的第一层抽象，这一类型中最著名的模型是     实体-联系模型</p>
-<p>4 保证数据库逻辑数据独立性， 需要修改的是  模式与外模式之间的映像  </p>
-<pre><code>外模式逻辑 内模式物理</code></pre><p>5  数据库（DB）是存储在计算机内有结构的数据的集合</p>
-<p>​        数据库系统（DBS）定义 通常由<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>、<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>和<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员组成。其<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>主要包括<a href="https://baike.baidu.com/item/操作系统" target="_blank" rel="noopener">操作系统</a>、各种<a href="https://baike.baidu.com/item/宿主语言" target="_blank" rel="noopener">宿主语言</a>、实用<a href="https://baike.baidu.com/item/程序" target="_blank" rel="noopener">程序</a>以及<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>。<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>由<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>统一管理，数据的插入、修改和检索均要通过数据库管理系统进行。<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员负责创建、监控和维护整个<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>，使数据能被任何有权使用的人有效使用</p>
-<p>​    数据库管理系统（DBMS） 定义用于建立、使用和维护<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>，简称<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>。它对<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>进行统一的管理和<a href="https://baike.baidu.com/item/控制/948689" target="_blank" rel="noopener">控制</a>，以保证<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>的安全性和完整性。用户通过<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>访问<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>中的数据，<a href="https://baike.baidu.com/item/数据库管理员/1216449" target="_blank" rel="noopener">数据库管理员</a>也通过<a href="https://baike.baidu.com/item/DBMS/1239170" target="_blank" rel="noopener">DBMS</a>进行数据库的维护工作。</p>
-<p>6 数据库中存储的是 数据以及数据之间的联系   </p>
-<p>​        一对多   多对一    一对一</p>
-<p>7 DBS DB DBMS  三者的关系  </p>
-<p>​              DBS 包含 DB DBMS   还有DBA（管理员） 用户</p>
-<p>8 数据库中产生数据不一致的根本原因是</p>
-<pre><code>数据亢余    </code></pre><p>​        数据库的完整性有哪三个 ： 实体完整性，域完整性参照完整性</p>
-<p>9 数据库管理系统是系统软件  </p>
-<p>​        DBMS 和（系统）OS的关系   DBMS调用了OS的功能</p>
-<p>10  数据库管理系统可以实现对数据库中增删查改  这功能叫  数据操操纵功能</p>
-<p>​        数据的定义功能  create database/table/view</p>
-<p>​            定义基表 视图 索引</p>
+        <p>vue-ul文件分类</p>
+<a id="more"></a>
+
+
+
+
+
+
+
+<h2 id="项目文件管理"><a href="#项目文件管理" class="headerlink" title="项目文件管理"></a>项目文件管理</h2><h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>项目的描述，版本，运行的脚本，依赖。</p>
+<h4 id="babel-config-js"><a href="#babel-config-js" class="headerlink" title="babel.config.js"></a>babel.config.js</h4><p>babel的配置文件</p>
+<h4 id="postcssrc-js"><a href="#postcssrc-js" class="headerlink" title=".postcssrc.js"></a>.postcssrc.js</h4><p>css自动补充的一部分兼容性代码</p>
+<h4 id="editorconfig-js"><a href="#editorconfig-js" class="headerlink" title=".editorconfig.js"></a>.editorconfig.js</h4><p>vscode自定义的一些规则关于写代码的</p>
+<h2 id="public-文件夹"><a href="#public-文件夹" class="headerlink" title="public 文件夹"></a>public 文件夹</h2><p>公共的文件</p>
+<h4 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h4><p>作为模板文件</p>
+<h2 id="src文件夹"><a href="#src文件夹" class="headerlink" title="src文件夹"></a>src文件夹</h2><p>项目的主要文件</p>
+<h4 id="assets文件"><a href="#assets文件" class="headerlink" title="assets文件"></a>assets文件</h4><p>放字体，图标等文件</p>
+<h4 id="components组件"><a href="#components组件" class="headerlink" title="components组件"></a>components组件</h4><p>可以复用的东西，抽离出来放在这里</p>
+<h2 id="view视图，页面都在这里"><a href="#view视图，页面都在这里" class="headerlink" title="view视图，页面都在这里"></a>view视图，页面都在这里</h2><h4 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h4><p>项目的基础组件</p>
+<h4 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h4><p>文件运行和编译的时候，都会从这个文件作为起始点</p>
+<h4 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h4><p>路由文件    </p>
+<h4 id="store-js"><a href="#store-js" class="headerlink" title="store.js"></a>store.js</h4><p>状态管理文件</p>
+<h2 id="config-文件"><a href="#config-文件" class="headerlink" title="config 文件"></a>config 文件</h2><p>项目的配置文件</p>
+<h2 id="directive文件"><a href="#directive文件" class="headerlink" title="directive文件"></a>directive文件</h2><p>vue的自定义指令</p>
+<h2 id="lib文件"><a href="#lib文件" class="headerlink" title="lib文件"></a>lib文件</h2><ul>
+<li>外部依赖文件</li>
+</ul>
+<h3 id="util-js"><a href="#util-js" class="headerlink" title="util.js"></a>util.js</h3><p>与业务有关系的文件都放在这里</p>
+<h2 id="router-文件"><a href="#router-文件" class="headerlink" title="router 文件"></a>router 文件</h2><h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><p>路由实例</p>
+<h3 id="router-js-1"><a href="#router-js-1" class="headerlink" title="router.js"></a>router.js</h3><p>路由列表</p>
+<h2 id="store文件"><a href="#store文件" class="headerlink" title="store文件"></a>store文件</h2><h1 id="路由基础文件"><a href="#路由基础文件" class="headerlink" title="路由基础文件"></a>路由基础文件</h1><p>1  router-link 和 router-view组件</p>
+<p>2  路由配置</p>
+<p>​        a. 动态路由</p>
+<p>​        b 嵌套路由</p>
+<p>​        c 命名路由</p>
+<p>​        d 命名视图</p>
+<p>3 JS操作路由</p>
+<p>4 重定向和别名</p>
+<h3 id="1-router-link-和-router-view组件"><a href="#1-router-link-和-router-view组件" class="headerlink" title="1  router-link 和 router-view组件"></a>1  router-link 和 router-view组件</h3><h5 id="1、router-link"><a href="#1、router-link" class="headerlink" title="1、router-link"></a>1、router-link</h5><p>参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"&#123; path: '/hello', component: HelloWorld &#125;"</span>&gt;hello</span><br><span class="line">&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp">&lt;router-link :to="&#123; path: '/u</span>ser/useradd<span class="string">' &#125;"&gt;user&lt;/router-link&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上是两种写法，根据参数还会有更多中写法。</p>
+<p>经过测试：（1）有component参数时优先router-link中配置的component，没有时从js中配置取</p>
+<p>　　　　　（2）path参数至关重要，灵活所在，/user/useradd 实际匹配了两个组件，分别是user和useradd</p>
+<p>k    { path:’/user’, component:user,</p>
+<p>​      children:[</p>
+<p>​        {path:’/user/useradd’, component:useradd},</p>
+<p>​        {path:’/user/userdelete’, component:userdelete}</p>
+<p>​      ]</p>
+<p>​    }</p>
+<h5 id="2、router-view"><a href="#2、router-view" class="headerlink" title="2、router-view"></a>2、router-view</h5><p>参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  &lt;router-link :to=<span class="string">"&#123; path: '/hello', component: HelloWorld &#125;"</span>&gt;hello</span><br><span class="line">&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp">  &lt;router-link :to="&#123; path: '/u</span>ser/useradd<span class="string">' &#125;"&gt;user&lt;/router-link&gt;</span></span><br><span class="line"><span class="string">  &lt;router-view/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><router-view><router-view>（命名视图）</router-view></router-view></p>
+<p><router-view>（嵌套命名视图）</router-view></p>
+<p><strong><router-view></router-view></strong> 是用来渲染通过路由映射过来的组件，当路径更改时， 中的内容也会发生更改</p>
+<p>hello  user </p>
+<p>当前看主要应用于单页面中，与router-link配合，渲染router-link 映射过来的组件。</p>
+<p><strong>运作过程：就是几个跳转链接跳到对应的子页面，程序运行的时候，会将<template>标签里面的内容都注入到App.vue页面中的router-view标签中，从而实现无刷新的路由跳转</template></strong></p>
+<h2 id="Vue-router-mode的使用"><a href="#Vue-router-mode的使用" class="headerlink" title="Vue router mode的使用"></a>Vue router mode的使用</h2><p>一般场景下，hash 和 history 都可以，</p>
+<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>​    <code>vue-router</code> 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</p>
+<p>hash —— 即地址栏 URL 中的 # 符号（此 hash 不是密码学里的散列运算）。比如这个 URL：<a href="http://www.abc.com/#/hello，hash" target="_blank" rel="noopener">http://www.abc.com/#/hello，hash</a> 的值为 #/hello。它的特点在于：hash 虽然出现在 URL 中，但不会被包括在 HTTP 请求中，对后端完全没有影响，因此改变 hash 不会重新加载页面。</p>
+<h3 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h3><p><strong>history 模式</strong>，这种模式充分利用 <code>history.pushState</code> API 来完成 URL 跳转而无须重新加载页面。</p>
+<p>当你使用 history 模式时，URL 就像正常的 url，例如 <code>http://yoursite.com/user/id</code>，也好看！</p>
+<p>不过这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 <code>http://oursite.com/user/id</code> 就会返回 404，这就不好看了。</p>
+<p>所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 <code>index.html</code> 页面，这个页面就是你 app 依赖的页面</p>
+<p>我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成URL 跳转而无须重新加载页面。</p>
+<p>另外，根据 Mozilla Develop Network 的介绍，调用 history.pushState() 相比于直接修改 hash，存在以下优势:</p>
+<ul>
+<li>pushState() 设置的新 URL 可以是与当前 URL 同源的任意 URL；而 hash 只可修改 # 后面的部分，因此只能设置与当前 URL 同文档的 URL；</li>
+<li>pushState() 设置的新 URL 可以与当前 URL 一模一样，这样也会把记录添加到栈中；而 hash 设置的新值必须与原来不一样才会触发动作将记录添加到栈中；</li>
+<li>pushState() 通过 stateObject 参数可以添加任意类型的数据到记录中；而 hash 只可添加短字符串；</li>
+<li>pushState() 可额外设置 title 属性供后续使用。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1 hash 模式下，仅 hash 符号之前的内容会被包含在请求中，如 <a href="http://www.abc.com，因此对于后端来说，即使没有做到对路由的全覆盖，也不会返回" target="_blank" rel="noopener">http://www.abc.com，因此对于后端来说，即使没有做到对路由的全覆盖，也不会返回</a> 404 错误。</p>
+<p>2 history 模式下，前端的 URL 必须和实际向后端发起请求的 URL 一致，如 <a href="http://www.abc.com/book/id。如果后端缺少对" target="_blank" rel="noopener">http://www.abc.com/book/id。如果后端缺少对</a> /book/id 的路由处理，将返回 404 错误。Vue-Router 官网里如此描述：“不过这种模式要玩好，还需要后台配置支持……所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面，这个页面就是你 app 依赖的页面。”</p>
+<p>3 结合自身例子，对于一般的 Vue + Vue-Router + Webpack + XXX 形式的 Web 开发场景，用 history 模式即可，只需在后端（Apache 或 Nginx）进行简单的路由配置，同时搭配前端路由的 404 页面支持。</p>
 
       
 
@@ -343,7 +330,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/13/第一章/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/14/过滤器 - 副本/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,18 +344,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/14/过滤器 - 副本/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/03/vue-router/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue-router</div>
+    <a href="/2020/04/13/第一章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库原理第一章笔记以及题解</div>
       <i class="icon-circle-right"></i>
     </a>
   
