@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>数据库原理第一章笔记以及题解 | 嘿哈吼哈</title>
+  <title>Vue cli项目创建 | 嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库原理笔记第一章 ​">
+  <meta name="description" content="创建一个vuecli 项目 以及配合码云进行包管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库原理第一章笔记以及题解">
-<meta property="og:url" content="https://mcqer.github.io/2020/04/13/第一章/index.html">
+<meta property="og:title" content="Vue cli项目创建">
+<meta property="og:url" content="https://mcqer.github.io/2020/04/15/Vue项目创建配合码云/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
-<meta property="og:description" content="数据库原理笔记第一章 ​">
+<meta property="og:description" content="创建一个vuecli 项目 以及配合码云进行包管理">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-15T05:08:53.431Z">
+<meta property="og:updated_time" content="2020-04-15T05:31:35.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库原理第一章笔记以及题解">
-<meta name="twitter:description" content="数据库原理笔记第一章 ​">
+<meta name="twitter:title" content="Vue cli项目创建">
+<meta name="twitter:description" content="创建一个vuecli 项目 以及配合码云进行包管理">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -154,118 +154,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第一章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue项目创建配合码云" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库原理第一章笔记以及题解
+      Vue cli项目创建
     </h1>
   
 
         
-        <a href="/2020/04/13/第一章/" class="archive-article-date">
-  	<time datetime="2020-04-13T02:51:39.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/15/Vue项目创建配合码云/" class="archive-article-date">
+  	<time datetime="2020-04-15T05:31:49.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  数据库原理笔记第一章</p>
-<p>​    <a id="more"></a></p>
-<h2 id="网课"><a href="#网课" class="headerlink" title="网课"></a>网课</h2><h4 id="数据模型的组成要素"><a href="#数据模型的组成要素" class="headerlink" title="数据模型的组成要素"></a>数据模型的组成要素</h4><p>数据操作是对系统动态特性的描述</p>
-<h4 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h4><p> 概念模型不依赖与某一个DBMS支持的数据类型，概念模型可以转换为计算机上某一个DBMS支持的特定数据模型</p>
-<p>特点 ： 1 具有较强的语义表达能力，能够方便直接地表达应用中的的各种语义只是</p>
-<p>​        用E-R图来描述现实世界的概念模型</p>
-<h4 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h4><p>采用树形结构 </p>
-<h5 id="层次模型满足下面两个"><a href="#层次模型满足下面两个" class="headerlink" title="层次模型满足下面两个"></a>层次模型满足下面两个</h5><p>1 有且只有一个节点无双亲，称为根节点</p>
-<p>2 除根节点外，其他节点有且只有一个双亲结点    </p>
-<p>CRUD功能 满足 层次模型的完整性</p>
-<p>插入： 没有双亲结点不能插入子女节点</p>
-<p>删除：删除双亲结点，同时删除子女结点</p>
-<p>更新：应更新所有记录，以免出现数据不一致</p>
-<p>查询：通过存取路劲实现</p>
-<h5 id="层次模型优点："><a href="#层次模型优点：" class="headerlink" title="层次模型优点："></a>层次模型优点：</h5><p>结构简单，完整性好，适用于非实体之间联系固定且预先定义好的应用系统</p>
-<h5 id="层次模型缺点"><a href="#层次模型缺点" class="headerlink" title="层次模型缺点:"></a>层次模型缺点:</h5><p>应用范围有限，插入和删除限制较多，查询子女节点必须通过双亲节点</p>
-<h4 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h4><p>采用网状模型</p>
-<p>层次模型是网状模型的特例</p>
-<p>典型的是DBTG系统</p>
-<h5 id="网状模型满足以下要求"><a href="#网状模型满足以下要求" class="headerlink" title="网状模型满足以下要求"></a>网状模型满足以下要求</h5><p>可以有一个以上的节点无双亲</p>
-<p>至少有一个以上节点有多余一个双亲</p>
-<h5 id="网状模型优点-："><a href="#网状模型优点-：" class="headerlink" title="网状模型优点 ："></a>网状模型优点 ：</h5><p>能够直接的描述现实世界，如果一个节点可以有多个双亲</p>
-<p>具有良好的性能，存取效率较高</p>
-<h5 id="网状模型缺点："><a href="#网状模型缺点：" class="headerlink" title="网状模型缺点："></a>网状模型缺点：</h5><p>结构复杂 随着应用环境的扩大，会越来越大</p>
-<p>DDL DML语言复杂，用户不容易使用</p>
-<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>关系模型是通过满足一定条件的二维表格，来表示实体集合及数据之间联系的一种数据模型</p>
-<p>具有坚实的数学基础和较严密的理论</p>
-<h5 id="关系的术语"><a href="#关系的术语" class="headerlink" title="关系的术语"></a>关系的术语</h5><p>关系： 一张二维表格</p>
-<p>元祖：表中的一行</p>
-<p>属性：表中的一列，每个属性都有一个属性名</p>
-<p>主键：唯一表示一个元祖的属性组</p>
-<p>域：属性的取值范围</p>
-<p>分量：元祖的一个属性值</p>
-<p>关系模式： 对关系的描述</p>
-<h5 id="关系模型操作："><a href="#关系模型操作：" class="headerlink" title="关系模型操作："></a>关系模型操作：</h5><p>值需要指出干什么，不必指出怎么做，不必指出存取路径</p>
-<h5 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h5><p>实体完整性</p>
-<p>参照完整性</p>
-<p>用户定义完整性</p>
-<h5 id="关系模型优点"><a href="#关系模型优点" class="headerlink" title="关系模型优点"></a>关系模型优点</h5><p>理论扎实：集合论，关系数据导论</p>
-<p>概念单一：实体用关系表示，联系也用关系表示</p>
-<p>存取路径对用户是透明的</p>
-<p>规范化：最基本的要求是每个属性不可再分割</p>
-<p>数据用表表示，查询结果也用表表示，表是一个集合，查询结果也是集合，，操作简单，用户不必知道存取路径</p>
-<h5 id="关系模型缺点"><a href="#关系模型缺点" class="headerlink" title="关系模型缺点"></a>关系模型缺点</h5><p>效率不如非关系模型，因此需要进行查询优化，增加了DBMS开发难度</p>
-<h3 id="DBS数据库系统"><a href="#DBS数据库系统" class="headerlink" title="DBS数据库系统"></a>DBS数据库系统</h3><h4 id="结构分为"><a href="#结构分为" class="headerlink" title="结构分为"></a>结构分为</h4><p>单用户结构，主从式结构，分布是结构，客户/服务器 浏览器/应用服务器</p>
-<h4 id="型和值的概念"><a href="#型和值的概念" class="headerlink" title="型和值的概念"></a>型和值的概念</h4><p>型是指对数据结构和属性的说明</p>
-<p>值是型的具体取值，是数据库的一个实例</p>
-<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><p>用于描述数据库的型 不涉及具体值</p>
-<h3 id="三级模式两层映像"><a href="#三级模式两层映像" class="headerlink" title="三级模式两层映像"></a>三级模式两层映像</h3><p><strong>三级模式由模式 外模式 内模式</strong></p>
-<p>两层映像 </p>
-<p><strong>模式到外模式之间的映像</strong>  逻辑独立性</p>
-<p><strong>模式到内模式之间的映像</strong>  物理独立性</p>
-<p>模式（也称逻辑模式）</p>
-<p>一个数据库只有一个模式</p>
-<h5 id="模式的地位："><a href="#模式的地位：" class="headerlink" title="模式的地位："></a>模式的地位：</h5><p> 是数据库系统模式结构的中间层</p>
-<p>与数据的物理存储细节和硬件环境无关</p>
-<p>与具体的应用程序，开发工具及高级程序设计语言无关</p>
-<h4 id="外模式"><a href="#外模式" class="headerlink" title="外模式"></a>外模式</h4><p>也称为子模式或者用户模式</p>
-<p>数据库用户（包括应用程序员和最终用户）使用的是局部数据的逻辑结构和特征的描述</p>
-<p>数据库用户的数据视图，是与某一个应用有关的数据的逻辑表示</p>
-<p>由模式映像出来的</p>
-<p>不同用户的外模式可以相互覆盖  同一个用户只可以使用一个外模式 </p>
-<h4 id="内模式"><a href="#内模式" class="headerlink" title="内模式"></a>内模式</h4><p>是全体数据库的内部表示  是数据库管理员（DBA）使用  一个数据库只可以有一个内模式</p>
-<p>内模式是数据物理结构和存储方式的描述</p>
-<p>是数据库在数据库内部的表示方式</p>
-<h4 id="模式到外模式之间的映像"><a href="#模式到外模式之间的映像" class="headerlink" title="模式到外模式之间的映像"></a>模式到外模式之间的映像</h4><p>程序改变时，由DBA修改模式到外模式之间的映像 用户程序是根据外模式编写的 </p>
-<p>不修改外模式，保证数据和程序之间的逻辑独立性</p>
-<h4 id="模式到内模式之间的映像"><a href="#模式到内模式之间的映像" class="headerlink" title="模式到内模式之间的映像"></a>模式到内模式之间的映像</h4><p>由DBA修改模式到内模式之间的映像  </p>
-<p>使用户操作从逻辑转向物理</p>
-<h2 id="测验"><a href="#测验" class="headerlink" title="测验"></a>测验</h2><p>1  数据库系统的核心是： 数据库管理软件 DBMS </p>
-<p>2  数据库系统的特点   </p>
-<p> 数据结构化</p>
-<p>数据由DBMS统一管理和控制</p>
-<p>数据独立性高    </p>
-<p>3 概念模型是现实世界的第一层抽象，这一类型中最著名的模型是     实体-联系模型</p>
-<p>4 保证数据库逻辑数据独立性， 需要修改的是  模式与外模式之间的映像  </p>
-<pre><code>外模式逻辑 内模式物理</code></pre><p>5  数据库（DB）是存储在计算机内有结构的数据的集合</p>
-<p>​        数据库系统（DBS）定义 通常由<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>、<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>和<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员组成。其<a href="https://baike.baidu.com/item/软件" target="_blank" rel="noopener">软件</a>主要包括<a href="https://baike.baidu.com/item/操作系统" target="_blank" rel="noopener">操作系统</a>、各种<a href="https://baike.baidu.com/item/宿主语言" target="_blank" rel="noopener">宿主语言</a>、实用<a href="https://baike.baidu.com/item/程序" target="_blank" rel="noopener">程序</a>以及<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>。<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>由<a href="https://baike.baidu.com/item/数据库管理系统" target="_blank" rel="noopener">数据库管理系统</a>统一管理，数据的插入、修改和检索均要通过数据库管理系统进行。<a href="https://baike.baidu.com/item/数据管理" target="_blank" rel="noopener">数据管理</a>员负责创建、监控和维护整个<a href="https://baike.baidu.com/item/数据库" target="_blank" rel="noopener">数据库</a>，使数据能被任何有权使用的人有效使用</p>
-<p>​    数据库管理系统（DBMS） 定义用于建立、使用和维护<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>，简称<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>。它对<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>进行统一的管理和<a href="https://baike.baidu.com/item/控制/948689" target="_blank" rel="noopener">控制</a>，以保证<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>的安全性和完整性。用户通过<a href="https://baike.baidu.com/item/DBMS" target="_blank" rel="noopener">DBMS</a>访问<a href="https://baike.baidu.com/item/数据库/103728" target="_blank" rel="noopener">数据库</a>中的数据，<a href="https://baike.baidu.com/item/数据库管理员/1216449" target="_blank" rel="noopener">数据库管理员</a>也通过<a href="https://baike.baidu.com/item/DBMS/1239170" target="_blank" rel="noopener">DBMS</a>进行数据库的维护工作。</p>
-<p>6 数据库中存储的是 数据以及数据之间的联系   </p>
-<p>​        一对多   多对一    一对一</p>
-<p>7 DBS DB DBMS  三者的关系  </p>
-<p>​              DBS 包含 DB DBMS   还有DBA（管理员） 用户</p>
-<p>8 数据库中产生数据不一致的根本原因是</p>
-<pre><code>数据亢余    </code></pre><p>​        数据库的完整性有哪三个 ： 实体完整性，域完整性参照完整性</p>
-<p>9 数据库管理系统是系统软件  </p>
-<p>​        DBMS 和（系统）OS的关系   DBMS调用了OS的功能</p>
-<p>10  数据库管理系统可以实现对数据库中增删查改  这功能叫  数据操操纵功能</p>
-<p>​        数据的定义功能  create database/table/view</p>
-<p>​            定义基表 视图 索引</p>
-<p>客观题</p>
-<p>1  数据库管理系统</p>
+        <p>创建一个vuecli 项目 以及配合码云进行包管理</p>
+<a id="more"></a>
+
+<h2 id="VUE项目开始"><a href="#VUE项目开始" class="headerlink" title="VUE项目开始"></a>VUE项目开始</h2><h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>cmd打开node -v 和npm-v 出现版本号就可以</p>
+<h3 id="注册码云"><a href="#注册码云" class="headerlink" title="注册码云"></a>注册码云</h3><p>在码云创建私人仓库</p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>安装好后桌面上右键可以看到Git  Bash Here</p>
+<p>因为电脑系统 是Windows 需要打开这个搭建一个linux环境 </p>
+<p> cmd 打开输入 <strong>git –version</strong></p>
+<p>可以看到版本号说明安装成功</p>
+<h3 id="码云设置ssh公钥"><a href="#码云设置ssh公钥" class="headerlink" title="码云设置ssh公钥"></a>码云设置ssh公钥</h3><p>在桌面右键打开Git  Bash Here</p>
+<p><a href="https://gitee.com/help/articles/4181#article-header0" target="_blank" rel="noopener">码云方法</a></p>
+<p>获取到公钥配置到码云上</p>
+<h3 id="项目引入到终端"><a href="#项目引入到终端" class="headerlink" title="项目引入到终端"></a>项目引入到终端</h3><p>在码云上找到创建的项目 </p>
+<p>找到克隆/下载  根据ssh下载 复制链接</p>
+<p>还是在获取公钥的git Bash 界面</p>
+<p>切换到要使用的项目路径</p>
+<p>git clone 点击键盘上INS键 将其粘贴在上面</p>
+<h3 id="安装vue-cli"><a href="#安装vue-cli" class="headerlink" title="安装vue_cli"></a>安装vue_cli</h3><p>建议观看<a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">Vue_cli</a> 官网</p>
+<p>项目创建文件不可以有大写字母</p>
+<p> 创建后和直接回车</p>
+<p>project description ：对Vue项目的描述 可直接回车</p>
+<p>Author ：项目作者</p>
+<p>Vue build：</p>
+<p>采用编译模式</p>
+<p>1 采用运行时编译</p>
+<p>2运行时和普通情况编译</p>
+<p>Install vue-router ：</p>
+<p>是否安装vue-router  复杂项目安装</p>
+<p>Use ESLint to lint your code？：</p>
+<p>是否使用ESLint进行功能上的检查</p>
+<p> 选择用哪一个进行工整性检查</p>
+<p>Set up unit tests：</p>
+<p>自动化测试</p>
+<p>Setup e2e tests with Nightwatch?：</p>
+<p>e2e 端到端的测试</p>
+<p>should we run npm install for you after the project has been created?：</p>
+<p>使用NPM进行项目的管理？</p>
+<p>最后进入到文件夹 </p>
+<p>npm run dev</p>
+<p>运行vue项目</p>
+<h3 id="把文件上传到码云"><a href="#把文件上传到码云" class="headerlink" title="把文件上传到码云"></a>把文件上传到码云</h3><p>在travel目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$   git status</span><br><span class="line">$   git add .</span><br><span class="line">$   git commit -m &quot;project initialized&quot;</span><br><span class="line">//一定要用双引号！！</span><br><span class="line">$   git push</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -345,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/13/第一章/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/15/Vue项目创建配合码云/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -359,18 +312,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/15/Vue项目文件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue项目的文件文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/03/vue-router/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue-router</div>
+    <a href="/2020/04/15/Vue项目文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue项目的文件文件</div>
       <i class="icon-circle-right"></i>
     </a>
   
