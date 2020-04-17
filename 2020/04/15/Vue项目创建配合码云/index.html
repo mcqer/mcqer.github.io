@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="嘿哈吼哈">
 <meta property="og:description" content="创建一个vuecli 项目 以及配合码云进行包管理">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-17T08:31:19.421Z">
+<meta property="og:updated_time" content="2020-04-17T12:21:22.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue cli项目创建">
 <meta name="twitter:description" content="创建一个vuecli 项目 以及配合码云进行包管理">
@@ -220,6 +220,8 @@
 
 
 <h3 id="在码云创建分支后写代码将新的分支导入"><a href="#在码云创建分支后写代码将新的分支导入" class="headerlink" title="在码云创建分支后写代码将新的分支导入"></a>在码云创建分支后写代码将新的分支导入</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout <span class="string">'分支的名字'</span></span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h3 id="在码云将新的分支导入线上"><a href="#在码云将新的分支导入线上" class="headerlink" title="在码云将新的分支导入线上"></a>在码云将新的分支导入线上</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'change'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">//已经提交到分支上</span><br><span class="line">//导入到线上</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge origin/index-swiper</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br></pre></td></tr></table></figure>
 
 
       
