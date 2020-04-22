@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2020/4 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title:数据库第二章  vue过滤器的定义，抽离，使用">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2020/04/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2020/04/22/第二章/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="title:数据库第二章  vue过滤器的定义，抽离，使用">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/22/JtGo6g.png">
+<meta property="og:updated_time" content="2020-04-22T05:47:51.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="title:数据库第二章  vue过滤器的定义，抽离，使用">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/04/22/JtGo6g.png">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,151 +156,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-第二章" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:数据库第二章</p>
+<hr>
+<p>vue过滤器的定义，抽离，使用</p>
+<a id="more"></a>
+
+<h1 id="网课"><a href="#网课" class="headerlink" title="网课"></a>网课</h1><h2 id="关系数据库概念"><a href="#关系数据库概念" class="headerlink" title="关系数据库概念"></a>关系数据库概念</h2><h3 id="1-域"><a href="#1-域" class="headerlink" title="1.域"></a>1.域</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>是一组具有相同数据类型的值的集合</p>
+<p>整数，实数</p>
+<p>介于某个取值范围的整数</p>
+<p>指定长度的字符串集合</p>
+<h3 id="2-笛卡尔积"><a href="#2-笛卡尔积" class="headerlink" title="2.笛卡尔积"></a>2.笛卡尔积</h3><p>给定一组域D1 D2 …Dn  （可相同）</p>
+<p>笛卡尔积为D1 * D2 …* Dn</p>
+<p>每个值叫分量</p>
+<p>基数</p>
+<h3 id="3-关系"><a href="#3-关系" class="headerlink" title="3.关系"></a>3.关系</h3><p>D1 * D2 …* Dn 的子集叫做在域D1 D2   Dn的关系 表示为 </p>
+<p>R（D1， D2 ….Dn）</p>
+<h4 id="属性-："><a href="#属性-：" class="headerlink" title="属性 ："></a>属性 ：</h4><p>关系中不同列可以对应相同的域</p>
+<p>每一个列起一个名字，称为属性 </p>
+<p>n目关系必须有n个属性</p>
+<h4 id="码："><a href="#码：" class="headerlink" title="码："></a>码：</h4><h5 id="候选码"><a href="#候选码" class="headerlink" title="候选码"></a>候选码</h5><p>若关系中的某一个属性组的值能唯一地表示一个元祖，则称为该属性组为候选码</p>
+<p>候选码只包含一个属性</p>
+<h5 id="全码："><a href="#全码：" class="headerlink" title="全码："></a>全码：</h5><p>最极端情况： 关系模式的所有属性组是这个关系模式的候选码，称为全码</p>
+<h5 id="主码："><a href="#主码：" class="headerlink" title="主码："></a>主码：</h5><p>若一个关系有多个候选码。则选定其中一个为主码</p>
+<h5 id="主属性："><a href="#主属性：" class="headerlink" title="主属性："></a>主属性：</h5><p>候选码的诸属性称为主属性。非码属性</p>
+<h4 id="三类关系"><a href="#三类关系" class="headerlink" title="三类关系"></a>三类关系</h4><h5 id="基本关系（基本表或者基表）"><a href="#基本关系（基本表或者基表）" class="headerlink" title="基本关系（基本表或者基表）"></a>基本关系（基本表或者基表）</h5><p>实际存在的，是实际存储数据的逻辑表示</p>
+<h5 id="查询表"><a href="#查询表" class="headerlink" title="查询表"></a>查询表</h5><p>查询结果对应的表</p>
+<h5 id="视图表"><a href="#视图表" class="headerlink" title="视图表"></a>视图表</h5><p>是基本表或者其他视图表导出的表，是虚表，不对应实际存储的数据</p>
+<h5 id="基本关系性质"><a href="#基本关系性质" class="headerlink" title="基本关系性质"></a>基本关系性质</h5><ol>
+<li>列是同质的</li>
+<li>不同的列可出自同一域</li>
+<li>列的顺序可以任意交换</li>
+<li>任意两个元祖的候选码不能相同 </li>
+<li>行的顺序无所谓，行的次序可以任意交换</li>
+<li>分量必须取原子值</li>
+</ol>
+<h3 id="4-关系模式"><a href="#4-关系模式" class="headerlink" title="4.关系模式"></a>4.关系模式</h3><p>关系模式是型 关系模式是值</p>
+<p>关系模式是对关系的描述</p>
+<h5 id="表示-："><a href="#表示-：" class="headerlink" title="表示 ："></a>表示 ：</h5><p>R （U，D，DOM，F）</p>
+<p>R关系名   U组成该关系的属性名集合  D 属性组U中属性所来自的域</p>
+<p>DOM 属性向域映像集合   F属性间的数据依赖关系集合</p>
+<h2 id="关系完整性"><a href="#关系完整性" class="headerlink" title="关系完整性"></a>关系完整性</h2><h3 id="1-实体完整性"><a href="#1-实体完整性" class="headerlink" title="1 .实体完整性"></a>1 .实体完整性</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>​        若属性A是基本关系R的主属性，则属性A不能取空值</p>
+<p>PS 不仅仅是主码整体不能取空值</p>
+<p>​        实体完整性规则规定基本关系的所有主属性都不能取空值</p>
+<h3 id="2-参照完整性"><a href="#2-参照完整性" class="headerlink" title="2.参照完整性"></a>2.参照完整性</h3><p>​        是关系间的引用</p>
+<p>​        在关系模型中实体及实体间的联系都是用关系来描述的，因此可能存在着关系与关系间的引用</p>
+<p>​    规则</p>
+<p>属性F是基本关系R的外码它与基本关系S的主码Ks相对应，则对于R中每个元祖在F上的值必须为</p>
+<p> 或取空值</p>
+<p>或等于S中某个元祖的主码值</p>
+<h3 id="3-用户定义的完整性"><a href="#3-用户定义的完整性" class="headerlink" title="3.用户定义的完整性"></a>3.用户定义的完整性</h3><p>针对某一具体关系数据库的约束条件，反映某一具体应用所涉及的数据必须满足的语义要求，这就属于用户自定义完整性。</p>
+<h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><h3 id="1-关系代数语言"><a href="#1-关系代数语言" class="headerlink" title="1.关系代数语言"></a>1.关系代数语言</h3><p>​    U 并     R和S 具有相同的目n 相应的属性取自同一个域</p>
+<p>​                R U S 仍为n目关系，由属于R或属于S的元组组成 </p>
+<ul>
+<li><p>差     R和S 具有相同的目n    相应的属性取自同一个域   </p>
+<p>​        R-S 仍为n目关系，由属性R而不属于S的所有元组组成</p>
+</li>
+<li><p>∩ 交   具有相同的目n   相应的属性取自同一个域</p>
+<p>​            仍为n目关系，有既属于R又属于S的元组组成</p>
+</li>
+<li><p>*笛卡尔积   严格是广义的     R：n目关系  k1个元组</p>
+<p>​                                                 S：m目关系  k2个元组</p>
+<p>​        R*S 列：（n+m）列元祖的集合</p>
+<p>​                            元祖的的前n列是关系R的一个元组</p>
+<p>​                            后m列是关系S的一个元组</p>
+<p>​                                k1*k2个元组</p>
+</li>
+</ul>
+<h2 id="投影运算和连接运算"><a href="#投影运算和连接运算" class="headerlink" title="投影运算和连接运算"></a>投影运算和连接运算</h2><h3 id="投影运算"><a href="#投影运算" class="headerlink" title="投影运算"></a>投影运算</h3><p>含义：从R中选择出若干属性列组成新的关系    </p>
+<p>计算：主要是从列的角度进行运算</p>
+<h3 id="连接运算"><a href="#连接运算" class="headerlink" title="连接运算"></a>连接运算</h3><p>含义： 从两个关系的笛卡尔积中选取属性间满足一定的元祖</p>
+<p>计算：1.等值连接  RS={、|t∈R∧t∈S∧t[A]=tB]</p>
+<p>​            2.自然连接 R和S具有相同的属性组B</p>
+<p>​        行的角度计算</p>
+<h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>给定关系R（X,Y）和S（Y,Z），其中X，Y，Z为属性组。R与S的除运算得到一个新的关系P（X），P是R中满足下列条件的元组在X属性列上的投影；元组在X上分量值X的象集Yx包含S在Y上投影的集合</p>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>同时在行和列运算</p>
+<p><img src="https://s1.ax1x.com/2020/04/22/JtGo6g.png" alt="JtGo6g.png"></p>
+<h1 id="测验"><a href="#测验" class="headerlink" title="测验"></a>测验</h1><ol>
+<li>关系模型中一个码是 由一个和多个属性组成，其值能够唯一标识关系中一个元组</li>
+<li>外码一般是作为唯一标识</li>
+<li>关系代数运算是以集合运算为基础的运算  </li>
+<li>五种基本关系运算 U -  *   n  </li>
+<li>投影操作是从关系中抽出特定字段 </li>
+<li>从一个数据库文件中取出满足某个条件的所有记录形成一个新的数据库文件的操作是选择操作</li>
+<li>一般条件要求R和S含有一个或者多个共有的属性，其中当对R和S进行自然连接</li>
+<li>R - （R-S） 表示为 R∩S</li>
+<li>关系模式中任何属性不可再分</li>
+<li></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/第二章/" class="archive-article-date">
-  	<time datetime="2020-04-22T05:47:24.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2020/04/22/第二章/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/17/Android /" class="archive-article-date">
-  	<time datetime="2020-04-17T08:29:55.870Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/17/Android /" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 项目目录结构基于</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/Android /">Android 项目目录结构基于</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/Vue项目创建配合码云/" class="archive-article-date">
-  	<time datetime="2020-04-15T05:31:49.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/Vue项目创建配合码云/">Vue cli项目创建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/Vue项目文件/" class="archive-article-date">
-  	<time datetime="2020-04-15T01:00:25.018Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/Vue项目文件/">Vue项目的文件文件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/13/第一章/" class="archive-article-date">
-  	<time datetime="2020-04-13T02:51:39.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/第一章/">数据库原理第一章笔记以及题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -317,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
