@@ -152,31 +152,218 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设置元素状态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Element-hidden"><a href="#Element-hidden" class="headerlink" title="Element.hidden"></a><strong>Element.hidden</strong></h3><p><code>Element.hidden</code>属性返回一个布尔值，表示当前 HTML 元素的<code>hidden</code>属性的值。该属性可读写，用来控制当前元素是否可见。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line">var mydiv = document.getElementById(&apos;mydiv&apos;);</span><br><span class="line"></span><br><span class="line">btn.addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">  mydiv.hidden = !mydiv.hidden;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
+
+<p>注意，该属性与 CSS 设置是互相独立的。CSS 对当前元素可见性的设置，<code>Element.hidden</code>并不能反映出来。也就是说，这个属性并不能用来判断当前元素的实际可见性。</p>
+<p>CSS 设置的优先级高于<code>Element.hidden</code>。如果 CSS 指定了该元素不可见（<code>display: none</code>）或可见（<code>visibility: visible</code>），那么<code>Element.hidden</code>并不能改变该元素实际的可见性。换言之，这个属性只在 CSS 没有明确设定当前元素的可见性时才有效。</p>
+<h3 id="attributes"><a href="#attributes" class="headerlink" title="attributes"></a>attributes</h3><p><code>Element.attributes</code>属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点，详见《属性的操作》一章。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var p = document.querySelector(&apos;p&apos;);</span><br><span class="line">var attrs = p.attributes;</span><br><span class="line"></span><br><span class="line">for (var i = attrs.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">  console.log(attrs[i].name + &apos;-&gt;&apos; + attrs[i].value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="className，Element-classList"><a href="#className，Element-classList" class="headerlink" title="className，Element.classList"></a>className，Element.classList</h3><p><code>className</code>属性用来读写当前元素节点的<code>class</code>属性。它的值是一个字符串，每个<code>class</code>之间用空格分割。</p>
+<p><code>classList</code>属性返回一个类似数组的对象，当前元素节点的每个<code>class</code>就是这个对象的一个成员。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// HTML 代码 &lt;div class=&quot;one two three&quot; id=&quot;myDiv&quot;&gt;&lt;/div&gt;</span><br><span class="line">var div = document.getElementById(&apos;myDiv&apos;);</span><br><span class="line"></span><br><span class="line">div.className</span><br><span class="line">// &quot;one two three&quot;</span><br><span class="line"></span><br><span class="line">div.classList</span><br><span class="line">// &#123;</span><br><span class="line">//   0: &quot;one&quot;</span><br><span class="line">//   1: &quot;two&quot;</span><br><span class="line">//   2: &quot;three&quot;</span><br><span class="line">//   length: 3</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>className</code>属性返回一个空格分隔的字符串，而<code>classList</code>属性指向一个类似数组的对象，该对象的<code>length</code>属性（只读）返回当前元素的<code>class</code>数量。</p>
+<p><code>classList</code>对象有下列方法。</p>
+<ul>
+<li><code>add()</code>：增加一个 class。</li>
+<li><code>remove()</code>：移除一个 class。</li>
+<li><code>contains()</code>：检查当前元素是否包含某个 class。</li>
+<li><code>toggle()</code>：将某个 class 移入或移出当前元素。</li>
+<li><code>item()</code>：返回指定索引位置的 class。</li>
+<li><code>toString()</code>：将 class 的列表转为字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var div = document.getElementById(&apos;myDiv&apos;);</span><br><span class="line"></span><br><span class="line">div.classList.add(&apos;myCssClass&apos;);</span><br><span class="line">div.classList.add(&apos;foo&apos;, &apos;bar&apos;);</span><br><span class="line">div.classList.remove(&apos;myCssClass&apos;);</span><br><span class="line">div.classList.toggle(&apos;myCssClass&apos;); // 如果 myCssClass 不存在就加入，否则移除</span><br><span class="line">div.classList.contains(&apos;myCssClass&apos;); // 返回 true 或者 false</span><br><span class="line">div.classList.item(0); // 返回第一个 Class</span><br><span class="line">div.classList.toString();</span><br></pre></td></tr></table></figure>
+
+<p>下面比较一下，<code>className</code>和<code>classList</code>在添加和删除某个 class 时的写法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var foo = document.getElementById(&apos;foo&apos;);</span><br><span class="line"></span><br><span class="line">// 添加class</span><br><span class="line">foo.className += &apos;bold&apos;;</span><br><span class="line">foo.classList.add(&apos;bold&apos;);</span><br><span class="line"></span><br><span class="line">// 删除class</span><br><span class="line">foo.classList.remove(&apos;bold&apos;);</span><br><span class="line">foo.className = foo.className.replace(/^bold$/, &apos;&apos;);</span><br></pre></td></tr></table></figure>
+
+<p><code>toggle</code>方法可以接受一个布尔值，作为第二个参数。如果为<code>true</code>，则添加该属性；如果为<code>false</code>，则去除该属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">el.classList.toggle(&apos;abc&apos;, boolValue);</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">if (boolValue) &#123;</span><br><span class="line">  el.classList.add(&apos;abc&apos;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  el.classList.remove(&apos;abc&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><p><code>Element.innerHTML</code>属性返回一个字符串，等同于该元素包含的所有 HTML 代码。该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括<code>&lt;HTML&gt;</code>和<code>&lt;body&gt;</code>元素。</p>
+<p>如果将<code>innerHTML</code>属性设为空，等于删除所有它包含的所有节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.innerHTML = &apos;&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="clientHeight，Element-clientWidth"><a href="#clientHeight，Element-clientWidth" class="headerlink" title="clientHeight，Element.clientWidth"></a>clientHeight，Element.clientWidth</h3><p><code>Element.clientHeight</code>属性返回一个整数值，表示元素节点的 CSS 高度（单位像素），只对块级元素生效，对于行内元素返回<code>0</code>。如果块级元素没有设置 CSS 高度，则返回实际高度。</p>
+<p>除了元素本身的高度，它还包括<code>padding</code>部分，但是不包括<code>border</code>、<code>margin</code>。如果有水平滚动条，还要减去水平滚动条的高度。注意，这个值始终是整数，如果是小数会被四舍五入。</p>
+<p><code>Element.clientWidth</code>属性返回元素节点的 CSS 宽度，同样只对块级元素有效，也是只包括元素本身的宽度和<code>padding</code>，如果有垂直滚动条，还要减去垂直滚动条的宽度。</p>
+<p><code>document.documentElement</code>的<code>clientHeight</code>属性，返回当前视口的高度（即浏览器窗口的高度），等同于<code>window.innerHeight</code>属性减去水平滚动条的高度（如果有的话）。<code>document.body</code>的高度则是网页的实际高度。一般来说，<code>document.body.clientHeight</code>大于<code>document.documentElement.clientHeight</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 视口高度</span><br><span class="line">document.documentElement.clientHeight</span><br><span class="line"></span><br><span class="line">// 网页总高度</span><br><span class="line">document.body.clientHeight</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/22/设置元素状态/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-与数值相关的全局方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="与数值相关的全局方法"><a href="#与数值相关的全局方法" class="headerlink" title="与数值相关的全局方法"></a>与数值相关的全局方法</h2><h3 id="parseInt（）"><a href="#parseInt（）" class="headerlink" title="parseInt（）"></a>parseInt（）</h3><h4 id="（1）基本用法"><a href="#（1）基本用法" class="headerlink" title="（1）基本用法"></a>（1）基本用法</h4><p>parseInt()  将字符串转为整数</p>
+<p>字符串头部有空格，空格会被自动清除</p>
+<p>若非为字符串则会先转为字符串再进行转换</p>
+<p>parseInt（1.23）  //1  d等同于  parseInt（“1.23）//   1</p>
+<p>转换字符串 若遇到不能转为数字的字符时，则不再转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;8a&apos;) // 8</span><br><span class="line">parseInt(&apos;12**&apos;) // 12</span><br><span class="line">parseInt(&apos;12.34&apos;) // 12</span><br><span class="line">parseInt(&apos;15e2&apos;) // 15</span><br><span class="line">parseInt(&apos;15px&apos;) // 15</span><br></pre></td></tr></table></figure>
+
+<p>若字符串头部非数字时，则直接转换NAN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;abc&apos;) // NaN</span><br><span class="line">parseInt(&apos;.3&apos;) // NaN</span><br><span class="line">parseInt(&apos;&apos;) // NaN</span><br><span class="line">parseInt(&apos;+&apos;) // NaN</span><br><span class="line">parseInt(&apos;+1&apos;) // 1</span><br></pre></td></tr></table></figure>
+
+<p>所以，<code>parseInt</code>的返回值只有两种可能，要么是一个十进制整数，要么是<code>NaN</code>。</p>
+<p>如果字符串以<code>0x</code>或<code>0X</code>开头，<code>parseInt</code>会将其按照十六进制数解析。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;0x10&apos;) // 16</span><br><span class="line"></span><br><span class="line">//若为0开头还是十位数</span><br></pre></td></tr></table></figure>
+
+<h4 id="（2）进制转换"><a href="#（2）进制转换" class="headerlink" title="（2）进制转换"></a>（2）进制转换</h4><p><code>parseInt</code>方法还可以接受第二个参数（2到36之间），表示被解析的值的进制，返回该值对应的<strong>十进制数</strong>。默认情况下，<code>parseInt</code>的第二个参数为10，即默认是十进制转十进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1000&apos;) // 1000</span><br><span class="line">// 等同于</span><br><span class="line">parseInt(&apos;1000&apos;, 10) // 1000</span><br></pre></td></tr></table></figure>
+
+<p>进制转化的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1000&apos;, 2) // 8</span><br><span class="line">parseInt(&apos;1000&apos;, 6) // 216</span><br><span class="line">parseInt(&apos;1000&apos;, 8) // 512</span><br></pre></td></tr></table></figure>
+
+<p>如果第二个参数不是<strong>数值</strong>，会被自动转为一个整数。这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回<code>NaN</code>。如果第二个参数是<code>0</code>、<code>undefined</code>和<code>null</code>，则直接忽略。</p>
+<p>如果字符串包含对于指定进制无意义的字符，则从最高位开始，只返回可以转换的数值。如果最高位无法转换，则直接返回<code>NaN</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1546&apos;, 2) // 1</span><br><span class="line">parseInt(&apos;546&apos;, 2) // NaN</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，对于二进制来说，<code>1</code>是有意义的字符，<code>5</code>、<code>4</code>、<code>6</code>都是无意义的字符，所以第一行返回1，第二行返回<code>NaN</code>。</p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>parseFloat</code>方法用于将一个字符串转为浮点数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;3.14&apos;) // 3.14</span><br></pre></td></tr></table></figure>
+
+<p>如果字符串包含不能转为浮点数的字符，则不再进行往后转换，返回已经转好的部分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;3.14more non-digit characters&apos;) // 3.14</span><br></pre></td></tr></table></figure>
+
+<p><code>parseFloat</code>方法会自动过滤字符串前导的空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;\t\v\r12.34\n &apos;) // 12.34</span><br></pre></td></tr></table></figure>
+
+<p>如果参数不是字符串，或者字符串的第一个字符不能转化为浮点数，则返回<code>NaN</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseFloat([]) // NaN</span><br><span class="line">parseFloat(&apos;FF2&apos;) // NaN</span><br><span class="line">parseFloat(&apos;&apos;) // NaN</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，尤其值得注意，<code>parseFloat</code>会将空字符串转为<code>NaN</code>！！！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;123.45#&apos;) // 123.45</span><br><span class="line">Number(&apos;123.45#&apos;) // NaN</span><br></pre></td></tr></table></figure>
+
+<h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h3><p><code>isNaN</code>方法可以用来判断一个值是否为<code>NaN</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN) // true</span><br><span class="line">isNaN(123) // false</span><br></pre></td></tr></table></figure>
+
+<p>但是，<code>isNaN</code>只对<strong>数值</strong>有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成<code>NaN</code>，所以最后返回<code>true</code>，这一点要特别引起注意。也就是说，<code>isNaN</code>为<code>true</code>的值，有可能不是<code>NaN</code>，而是一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isNaN(&apos;Hello&apos;) // true</span><br><span class="line">// 相当于</span><br><span class="line">isNaN(Number(&apos;Hello&apos;)) // true</span><br></pre></td></tr></table></figure>
+
+<p>出于同样的原因，对于对象和数组，<code>isNaN</code>也返回<code>true</code>。</p>
+<p>但是，对于空数组和只有一个数值成员的数组，<code>isNaN</code>返回<code>false</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isNaN([]) // false</span><br><span class="line">isNaN([123]) // false</span><br><span class="line">isNaN([&apos;123&apos;]) // false</span><br></pre></td></tr></table></figure>
+
+<p>因此，使用<code>isNaN</code>之前，最好判断一下数据类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN(value) &#123;</span><br><span class="line">  return typeof value === &apos;number&apos; &amp;&amp; isNaN(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断<code>NaN</code>更可靠的方法是，利用<code>NaN</code>为唯一不等于自身的值的这个特点，进行判断。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN(value) &#123;</span><br><span class="line">  return value !== value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/22/与数值相关的全局方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-青年大学习安卓跳过" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/搭建个人博客/">个人博客搭建</a>
+      <a class="article-title" href="/2020/06/28/青年大学习安卓跳过/">青年大学习安卓跳过</a>
     </h1>
   
 
         
-        <a href="/2019/09/29/搭建个人博客/" class="archive-article-date">
-  	<time datetime="2019-09-29T02:45:29.895Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
+        <a href="/2020/06/28/青年大学习安卓跳过/" class="archive-article-date">
+  	<time datetime="2020-06-28T07:50:06.619Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    这也算是本人的第一个hexo框架博客，其中有我同学的帮助，感谢。</p>
-<p>​    接下来是搭建过程，全长半个小时，博客就可以搭建成功。</p>
+        <p>​    苹果不过如此，安卓也可以做到</p>
 <p>​</p>
         
-          <a class="article-more-a" href="/2019/09/29/搭建个人博客/#more">more >></a>
+          <a class="article-more-a" href="/2020/06/28/青年大学习安卓跳过/#more">more >></a>
         
       
 
@@ -189,7 +376,462 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/29/搭建个人博客/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/28/青年大学习安卓跳过/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android " class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/17/Android /">Android 项目目录结构基于</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/17/Android /" class="archive-article-date">
+  	<time datetime="2020-04-17T08:29:55.870Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 基于安卓的项目文件简介</p>
+        
+          <a class="article-more-a" href="/2020/04/17/Android /#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/17/Android /">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue项目创建配合码云" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/15/Vue项目创建配合码云/">Vue cli项目创建</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/15/Vue项目创建配合码云/" class="archive-article-date">
+  	<time datetime="2020-04-15T05:31:49.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建一个vuecli 项目 以及配合码云进行包管理</p>
+        
+          <a class="article-more-a" href="/2020/04/15/Vue项目创建配合码云/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/15/Vue项目创建配合码云/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue项目文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/15/Vue项目文件/">Vue项目的文件文件</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/15/Vue项目文件/" class="archive-article-date">
+  	<time datetime="2020-04-15T01:00:25.018Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue-ul文件分类</p>
+        
+          <a class="article-more-a" href="/2020/04/15/Vue项目文件/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/15/Vue项目文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/第一章/">数据库原理第一章笔记以及题解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/第一章/" class="archive-article-date">
+  	<time datetime="2020-04-13T02:51:39.507Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  数据库原理笔记第一章</p>
+        
+          <a class="article-more-a" href="/2020/04/13/第一章/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/第一章/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/vue-router/">Vue-router</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/vue-router/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>router导航解析过程</p>
+        
+          <a class="article-more-a" href="/2019/11/03/vue-router/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/vue-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue父子组件通信" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>三种父子组件通信 prop $emit $ref</p>
+        
+          <a class="article-more-a" href="/2019/11/03/vue父子组件通信/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/vue父子组件通信/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-过滤器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/过滤器/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue过滤器的定义，抽离，使用</p>
+        
+          <a class="article-more-a" href="/2019/11/03/过滤器/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/过滤器/">展开全文 >></a>
         </p>
       
 
@@ -221,7 +863,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -233,7 +875,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 嘿哈吼哈
+    		&copy; 2022 嘿哈吼哈
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

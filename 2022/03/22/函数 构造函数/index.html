@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Function 构造函数** 第三种声明函数的方式是Function构造函数。 12345678910var add = new Function(  &amp;apos;x&amp;apos;,  &amp;apos;y&amp;apos;,  &amp;apos;return x + y&amp;apos;);// 等同于function add(x, y) &amp;#123;  return x + y;&amp;#125;  上面代码中，Funct">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/22/函数 构造函数/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="Function 构造函数** 第三种声明函数的方式是Function构造函数。 12345678910var add = new Function(  &amp;apos;x&amp;apos;,  &amp;apos;y&amp;apos;,  &amp;apos;return x + y&amp;apos;);// 等同于function add(x, y) &amp;#123;  return x + y;&amp;#125;  上面代码中，Funct">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-18T07:55:48.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="Function 构造函数** 第三种声明函数的方式是Function构造函数。 12345678910var add = new Function(  &amp;apos;x&amp;apos;,  &amp;apos;y&amp;apos;,  &amp;apos;return x + y&amp;apos;);// 等同于function add(x, y) &amp;#123;  return x + y;&amp;#125;  上面代码中，Funct">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-函数 构造函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Function 构造函数**</p>
+<p>第三种声明函数的方式是<code>Function</code>构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var add = new Function(</span><br><span class="line">  &apos;x&apos;,</span><br><span class="line">  &apos;y&apos;,</span><br><span class="line">  &apos;return x + y&apos;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>Function</code>构造函数接受三个参数，除了最后一个参数是<code>add</code>函数的“函数体”，其他参数都是<code>add</code>函数的参数。</p>
+<p>你可以传递任意数量的参数给<code>Function</code>构造函数，只有最后一个参数会被当做函数体，如果只有一个参数，该参数就是函数体。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = new Function(</span><br><span class="line">  &apos;return &quot;hello world&quot;;&apos;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">function foo() &#123;</span><br><span class="line">  return &apos;hello world&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Function</code>构造函数可以不使用<code>new</code>命令，返回结果完全一样。</p>
+<p>总的来说，这种声明函数的方式非常不直观，几乎无人使用。</p>
+<p>调用函数时，要使用圆括号运算符。圆括号之中，可以加入函数的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(x, y) &#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(1, 1) // 2</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，函数名后面紧跟一对圆括号，就会调用这个函数。</p>
+<p>函数体内部的<code>return</code>语句，表示返回。JavaScript 引擎遇到<code>return</code>语句，就直接返回<code>return</code>后面的那个表达式的值，后面即使还有语句，也不会得到执行。也就是说，<code>return</code>语句所带的那个表达式，就是函数的返回值。<code>return</code>语句不是必需的，如果没有的话，该函数就不返回任何值，或者说返回<code>undefined</code>。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/22/函数 构造函数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/22/函数的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

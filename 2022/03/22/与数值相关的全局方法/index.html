@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="与数值相关的全局方法parseInt（）（1）基本用法parseInt()  将字符串转为整数 字符串头部有空格，空格会被自动清除 若非为字符串则会先转为字符串再进行转换 parseInt（1.23）  //1  d等同于  parseInt（“1.23）//   1 转换字符串 若遇到不能转为数字的字符时，则不再转换 12345parseInt(&amp;apos;8a&amp;apos;) // 8parse">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/22/与数值相关的全局方法/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="与数值相关的全局方法parseInt（）（1）基本用法parseInt()  将字符串转为整数 字符串头部有空格，空格会被自动清除 若非为字符串则会先转为字符串再进行转换 parseInt（1.23）  //1  d等同于  parseInt（“1.23）//   1 转换字符串 若遇到不能转为数字的字符时，则不再转换 12345parseInt(&amp;apos;8a&amp;apos;) // 8parse">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-17T09:19:46.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="与数值相关的全局方法parseInt（）（1）基本用法parseInt()  将字符串转为整数 字符串头部有空格，空格会被自动清除 若非为字符串则会先转为字符串再进行转换 parseInt（1.23）  //1  d等同于  parseInt（“1.23）//   1 转换字符串 若遇到不能转为数字的字符时，则不再转换 12345parseInt(&amp;apos;8a&amp;apos;) // 8parse">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,205 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-与数值相关的全局方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="与数值相关的全局方法"><a href="#与数值相关的全局方法" class="headerlink" title="与数值相关的全局方法"></a>与数值相关的全局方法</h2><h3 id="parseInt（）"><a href="#parseInt（）" class="headerlink" title="parseInt（）"></a>parseInt（）</h3><h4 id="（1）基本用法"><a href="#（1）基本用法" class="headerlink" title="（1）基本用法"></a>（1）基本用法</h4><p>parseInt()  将字符串转为整数</p>
+<p>字符串头部有空格，空格会被自动清除</p>
+<p>若非为字符串则会先转为字符串再进行转换</p>
+<p>parseInt（1.23）  //1  d等同于  parseInt（“1.23）//   1</p>
+<p>转换字符串 若遇到不能转为数字的字符时，则不再转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;8a&apos;) // 8</span><br><span class="line">parseInt(&apos;12**&apos;) // 12</span><br><span class="line">parseInt(&apos;12.34&apos;) // 12</span><br><span class="line">parseInt(&apos;15e2&apos;) // 15</span><br><span class="line">parseInt(&apos;15px&apos;) // 15</span><br></pre></td></tr></table></figure>
+
+<p>若字符串头部非数字时，则直接转换NAN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;abc&apos;) // NaN</span><br><span class="line">parseInt(&apos;.3&apos;) // NaN</span><br><span class="line">parseInt(&apos;&apos;) // NaN</span><br><span class="line">parseInt(&apos;+&apos;) // NaN</span><br><span class="line">parseInt(&apos;+1&apos;) // 1</span><br></pre></td></tr></table></figure>
+
+<p>所以，<code>parseInt</code>的返回值只有两种可能，要么是一个十进制整数，要么是<code>NaN</code>。</p>
+<p>如果字符串以<code>0x</code>或<code>0X</code>开头，<code>parseInt</code>会将其按照十六进制数解析。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;0x10&apos;) // 16</span><br><span class="line"></span><br><span class="line">//若为0开头还是十位数</span><br></pre></td></tr></table></figure>
+
+<h4 id="（2）进制转换"><a href="#（2）进制转换" class="headerlink" title="（2）进制转换"></a>（2）进制转换</h4><p><code>parseInt</code>方法还可以接受第二个参数（2到36之间），表示被解析的值的进制，返回该值对应的<strong>十进制数</strong>。默认情况下，<code>parseInt</code>的第二个参数为10，即默认是十进制转十进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1000&apos;) // 1000</span><br><span class="line">// 等同于</span><br><span class="line">parseInt(&apos;1000&apos;, 10) // 1000</span><br></pre></td></tr></table></figure>
+
+<p>进制转化的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1000&apos;, 2) // 8</span><br><span class="line">parseInt(&apos;1000&apos;, 6) // 216</span><br><span class="line">parseInt(&apos;1000&apos;, 8) // 512</span><br></pre></td></tr></table></figure>
+
+<p>如果第二个参数不是<strong>数值</strong>，会被自动转为一个整数。这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回<code>NaN</code>。如果第二个参数是<code>0</code>、<code>undefined</code>和<code>null</code>，则直接忽略。</p>
+<p>如果字符串包含对于指定进制无意义的字符，则从最高位开始，只返回可以转换的数值。如果最高位无法转换，则直接返回<code>NaN</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;1546&apos;, 2) // 1</span><br><span class="line">parseInt(&apos;546&apos;, 2) // NaN</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，对于二进制来说，<code>1</code>是有意义的字符，<code>5</code>、<code>4</code>、<code>6</code>都是无意义的字符，所以第一行返回1，第二行返回<code>NaN</code>。</p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>parseFloat</code>方法用于将一个字符串转为浮点数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;3.14&apos;) // 3.14</span><br></pre></td></tr></table></figure>
+
+<p>如果字符串包含不能转为浮点数的字符，则不再进行往后转换，返回已经转好的部分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;3.14more non-digit characters&apos;) // 3.14</span><br></pre></td></tr></table></figure>
+
+<p><code>parseFloat</code>方法会自动过滤字符串前导的空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;\t\v\r12.34\n &apos;) // 12.34</span><br></pre></td></tr></table></figure>
+
+<p>如果参数不是字符串，或者字符串的第一个字符不能转化为浮点数，则返回<code>NaN</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseFloat([]) // NaN</span><br><span class="line">parseFloat(&apos;FF2&apos;) // NaN</span><br><span class="line">parseFloat(&apos;&apos;) // NaN</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，尤其值得注意，<code>parseFloat</code>会将空字符串转为<code>NaN</code>！！！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;123.45#&apos;) // 123.45</span><br><span class="line">Number(&apos;123.45#&apos;) // NaN</span><br></pre></td></tr></table></figure>
+
+<h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h3><p><code>isNaN</code>方法可以用来判断一个值是否为<code>NaN</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN) // true</span><br><span class="line">isNaN(123) // false</span><br></pre></td></tr></table></figure>
+
+<p>但是，<code>isNaN</code>只对<strong>数值</strong>有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成<code>NaN</code>，所以最后返回<code>true</code>，这一点要特别引起注意。也就是说，<code>isNaN</code>为<code>true</code>的值，有可能不是<code>NaN</code>，而是一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isNaN(&apos;Hello&apos;) // true</span><br><span class="line">// 相当于</span><br><span class="line">isNaN(Number(&apos;Hello&apos;)) // true</span><br></pre></td></tr></table></figure>
+
+<p>出于同样的原因，对于对象和数组，<code>isNaN</code>也返回<code>true</code>。</p>
+<p>但是，对于空数组和只有一个数值成员的数组，<code>isNaN</code>返回<code>false</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isNaN([]) // false</span><br><span class="line">isNaN([123]) // false</span><br><span class="line">isNaN([&apos;123&apos;]) // false</span><br></pre></td></tr></table></figure>
+
+<p>因此，使用<code>isNaN</code>之前，最好判断一下数据类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN(value) &#123;</span><br><span class="line">  return typeof value === &apos;number&apos; &amp;&amp; isNaN(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断<code>NaN</code>更可靠的方法是，利用<code>NaN</code>为唯一不等于自身的值的这个特点，进行判断。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN(value) &#123;</span><br><span class="line">  return value !== value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/22/与数值相关的全局方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/设置元素状态/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/28/青年大学习安卓跳过/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">青年大学习安卓跳过</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

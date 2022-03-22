@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="如果数组的元素还是数组，就形成了多维数组。 123var a = [[1, 2], [3, 4]];a[0][1] // 2a[1][1] // 4  数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 1typeof [1, 2, 3] // &amp;quot;object&amp;quot;  上面代码表明，typeof运算符认为数组的类型就是对象。 数组的特殊性体">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/22/数组/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="如果数组的元素还是数组，就形成了多维数组。 123var a = [[1, 2], [3, 4]];a[0][1] // 2a[1][1] // 4  数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 1typeof [1, 2, 3] // &amp;quot;object&amp;quot;  上面代码表明，typeof运算符认为数组的类型就是对象。 数组的特殊性体">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-19T08:37:09.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="如果数组的元素还是数组，就形成了多维数组。 123var a = [[1, 2], [3, 4]];a[0][1] // 2a[1][1] // 4  数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 1typeof [1, 2, 3] // &amp;quot;object&amp;quot;  上面代码表明，typeof运算符认为数组的类型就是对象。 数组的特殊性体">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,205 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数组" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果数组的元素还是数组，就形成了多维数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [[1, 2], [3, 4]];</span><br><span class="line">a[0][1] // 2</span><br><span class="line">a[1][1] // 4</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的本质"><a href="#数组的本质" class="headerlink" title="数组的本质"></a>数组的本质</h2><p>本质上，数组属于一种特殊的对象。<code>typeof</code>运算符会返回数组的类型是<code>object</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof [1, 2, 3] // &quot;object&quot;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表明，<code>typeof</code>运算符认为数组的类型就是对象。</p>
+<p>数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2…）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line"></span><br><span class="line">Object.keys(arr)</span><br><span class="line">// [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript 使用一个32位整数，保存数组的元素个数。这意味着，数组成员最多只有 4294967295 个（232 - 1）个，也就是说<code>length</code>属性的最大值就是 4294967295。</p>
+<p>只要是数组，就一定有<code>length</code>属性。该属性是一个动态的值，等于键名中的最大整数加上<code>1</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;];</span><br><span class="line">arr.length // 2</span><br><span class="line"></span><br><span class="line">arr[2] = &apos;c&apos;;</span><br><span class="line">arr.length // 3</span><br><span class="line"></span><br><span class="line">arr[9] = &apos;d&apos;;</span><br><span class="line">arr.length // 10</span><br><span class="line"></span><br><span class="line">arr[1000] = &apos;e&apos;;</span><br><span class="line">arr.length // 1001</span><br></pre></td></tr></table></figure>
+
+<p><code>length</code>属性是可写的。如果人为设置一个小于当前成员个数的值，该数组的成员数量会自动减少到<code>length</code>设置的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ &apos;a&apos;, &apos;b&apos;, &apos;c&apos; ];</span><br><span class="line">arr.length // 3</span><br><span class="line"></span><br><span class="line">arr.length = 2;</span><br><span class="line">arr // [&quot;a&quot;, &quot;b&quot;]</span><br></pre></td></tr></table></figure>
+
+<h5 id="清空数组的一个有效方法，就是将length属性设为0。"><a href="#清空数组的一个有效方法，就是将length属性设为0。" class="headerlink" title="清空数组的一个有效方法，就是将length属性设为0。"></a>清空数组的一个有效方法，就是将<code>length</code>属性设为0。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ &apos;a&apos;, &apos;b&apos;, &apos;c&apos; ];</span><br><span class="line"></span><br><span class="line">arr.length = 0;</span><br><span class="line">arr // []</span><br></pre></td></tr></table></figure>
+
+<p>如果人为设置<code>length</code>大于当前元素个数，则数组的成员数量会增加到这个值，新增的位置都是空位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&apos;a&apos;];</span><br><span class="line"></span><br><span class="line">a.length = 3;</span><br><span class="line">a[1] // undefined</span><br></pre></td></tr></table></figure>
+
+<p>如果人为设置<code>length</code>为不合法的值，JavaScript 会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 设置负值</span><br><span class="line">[].length = -1</span><br><span class="line">// RangeError: Invalid array length</span><br><span class="line"></span><br><span class="line">// 数组元素个数大于等于2的32次方</span><br><span class="line">[].length = Math.pow(2, 32)</span><br><span class="line">// RangeError: Invalid array length</span><br><span class="line"></span><br><span class="line">// 设置字符串</span><br><span class="line">[].length = &apos;abc&apos;</span><br><span class="line">// RangeError: Invalid array length</span><br></pre></td></tr></table></figure>
+
+<h2 id="in-运算符"><a href="#in-运算符" class="headerlink" title="in 运算符"></a>in 运算符</h2><p>检查某个键名是否存在的运算符<code>in</code>，适用于对象，也适用于数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ &apos;a&apos;, &apos;b&apos;, &apos;c&apos; ];</span><br><span class="line">2 in arr  // true</span><br><span class="line">&apos;2&apos; in arr // true</span><br><span class="line">4 in arr // false</span><br></pre></td></tr></table></figure>
+
+<p>注意，如果数组的某个位置是空位，<code>in</code>运算符返回<code>false</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr[100] = &apos;a&apos;;</span><br><span class="line"></span><br><span class="line">100 in arr // true</span><br><span class="line">1 in arr // false</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，数组<code>arr</code>只有一个成员<code>arr[100]</code>，其他位置的键名都会返回<code>false</code>。</p>
+<h3 id="fo-in-循环和数组的遍历"><a href="#fo-in-循环和数组的遍历" class="headerlink" title="fo in 循环和数组的遍历"></a>fo in 循环和数组的遍历</h3><p><code>for...in</code>循环不仅可以遍历对象，也可以遍历数组，毕竟数组只是一种特殊对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3];</span><br><span class="line"></span><br><span class="line">for (var i in a) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">&#125;</span><br><span class="line">// 1</span><br><span class="line">// 2</span><br></pre></td></tr></table></figure>
+
+<p>但是，<code>for...in</code>不仅会遍历数组所有的数字键，还会遍历非数字键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3];</span><br><span class="line">a.foo = true;</span><br><span class="line"></span><br><span class="line">for (var key in a) &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">&#125;</span><br><span class="line">// 0</span><br><span class="line">// 1</span><br><span class="line">// 2</span><br><span class="line">// foo</span><br></pre></td></tr></table></figure>
+
+<p>非整数键<code>foo</code>。所以，不推荐使用<code>for...in</code>遍历数组。</p>
+<p>数组的遍历可以考虑使用<code>for</code>循环或<code>while</code>循环。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3];</span><br><span class="line"></span><br><span class="line">// for循环</span><br><span class="line">for(var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// while循环</span><br><span class="line">var i = 0;</span><br><span class="line">while (i &lt; a.length) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var l = a.length;</span><br><span class="line">while (l--) &#123;</span><br><span class="line">  console.log(a[l]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数组的<code>forEach</code>方法，也可以用来遍历数组，详见《标准库》的 Array 对象一章。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.forEach(function (color) &#123;</span><br><span class="line">  console.log(color);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h2><p>当数组的某个位置是空元素，即两个逗号之间没有任何值，我们称该数组存在空位（hole）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, , 1];</span><br><span class="line">a.length // 3</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表明，数组的空位不影响<code>length</code>属性。虽然这个位置没有值，引擎依然认为这个位置是有效的。</p>
+<p>需要注意的是，如果最后一个元素后面有逗号，并不会产生空位。也就是说，有没有这个逗号，结果都是一样的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3,];</span><br><span class="line"></span><br><span class="line">a.length // 3</span><br><span class="line">a // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+<p>数组的空位是可以读取的，返回<code>undefined</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = [, , ,];</span><br><span class="line">a[1] // undefined</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>delete</code>命令删除一个数组成员，会形成空位，并且不会影响<code>length</code>属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3];</span><br><span class="line">delete a[1];</span><br><span class="line"></span><br><span class="line">a[1] // undefined</span><br><span class="line">a.length // 3</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/22/数组/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/函数的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/22/运算符/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

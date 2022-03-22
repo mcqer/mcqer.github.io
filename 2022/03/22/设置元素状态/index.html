@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Element.hiddenElement.hidden属性返回一个布尔值，表示当前 HTML 元素的hidden属性的值。该属性可读写，用来控制当前元素是否可见。 123456var btn = document.getElementById(&amp;apos;btn&amp;apos;);var mydiv = document.getElementById(&amp;apos;mydiv&amp;apos;);btn.a">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/22/设置元素状态/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="Element.hiddenElement.hidden属性返回一个布尔值，表示当前 HTML 元素的hidden属性的值。该属性可读写，用来控制当前元素是否可见。 123456var btn = document.getElementById(&amp;apos;btn&amp;apos;);var mydiv = document.getElementById(&amp;apos;mydiv&amp;apos;);btn.a">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-21T15:54:29.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="Element.hiddenElement.hidden属性返回一个布尔值，表示当前 HTML 元素的hidden属性的值。该属性可读写，用来控制当前元素是否可见。 123456var btn = document.getElementById(&amp;apos;btn&amp;apos;);var mydiv = document.getElementById(&amp;apos;mydiv&amp;apos;);btn.a">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设置元素状态" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Element-hidden"><a href="#Element-hidden" class="headerlink" title="Element.hidden"></a><strong>Element.hidden</strong></h3><p><code>Element.hidden</code>属性返回一个布尔值，表示当前 HTML 元素的<code>hidden</code>属性的值。该属性可读写，用来控制当前元素是否可见。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line">var mydiv = document.getElementById(&apos;mydiv&apos;);</span><br><span class="line"></span><br><span class="line">btn.addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">  mydiv.hidden = !mydiv.hidden;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
+
+<p>注意，该属性与 CSS 设置是互相独立的。CSS 对当前元素可见性的设置，<code>Element.hidden</code>并不能反映出来。也就是说，这个属性并不能用来判断当前元素的实际可见性。</p>
+<p>CSS 设置的优先级高于<code>Element.hidden</code>。如果 CSS 指定了该元素不可见（<code>display: none</code>）或可见（<code>visibility: visible</code>），那么<code>Element.hidden</code>并不能改变该元素实际的可见性。换言之，这个属性只在 CSS 没有明确设定当前元素的可见性时才有效。</p>
+<h3 id="attributes"><a href="#attributes" class="headerlink" title="attributes"></a>attributes</h3><p><code>Element.attributes</code>属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点，详见《属性的操作》一章。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var p = document.querySelector(&apos;p&apos;);</span><br><span class="line">var attrs = p.attributes;</span><br><span class="line"></span><br><span class="line">for (var i = attrs.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">  console.log(attrs[i].name + &apos;-&gt;&apos; + attrs[i].value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="className，Element-classList"><a href="#className，Element-classList" class="headerlink" title="className，Element.classList"></a>className，Element.classList</h3><p><code>className</code>属性用来读写当前元素节点的<code>class</code>属性。它的值是一个字符串，每个<code>class</code>之间用空格分割。</p>
+<p><code>classList</code>属性返回一个类似数组的对象，当前元素节点的每个<code>class</code>就是这个对象的一个成员。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// HTML 代码 &lt;div class=&quot;one two three&quot; id=&quot;myDiv&quot;&gt;&lt;/div&gt;</span><br><span class="line">var div = document.getElementById(&apos;myDiv&apos;);</span><br><span class="line"></span><br><span class="line">div.className</span><br><span class="line">// &quot;one two three&quot;</span><br><span class="line"></span><br><span class="line">div.classList</span><br><span class="line">// &#123;</span><br><span class="line">//   0: &quot;one&quot;</span><br><span class="line">//   1: &quot;two&quot;</span><br><span class="line">//   2: &quot;three&quot;</span><br><span class="line">//   length: 3</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>className</code>属性返回一个空格分隔的字符串，而<code>classList</code>属性指向一个类似数组的对象，该对象的<code>length</code>属性（只读）返回当前元素的<code>class</code>数量。</p>
+<p><code>classList</code>对象有下列方法。</p>
+<ul>
+<li><code>add()</code>：增加一个 class。</li>
+<li><code>remove()</code>：移除一个 class。</li>
+<li><code>contains()</code>：检查当前元素是否包含某个 class。</li>
+<li><code>toggle()</code>：将某个 class 移入或移出当前元素。</li>
+<li><code>item()</code>：返回指定索引位置的 class。</li>
+<li><code>toString()</code>：将 class 的列表转为字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var div = document.getElementById(&apos;myDiv&apos;);</span><br><span class="line"></span><br><span class="line">div.classList.add(&apos;myCssClass&apos;);</span><br><span class="line">div.classList.add(&apos;foo&apos;, &apos;bar&apos;);</span><br><span class="line">div.classList.remove(&apos;myCssClass&apos;);</span><br><span class="line">div.classList.toggle(&apos;myCssClass&apos;); // 如果 myCssClass 不存在就加入，否则移除</span><br><span class="line">div.classList.contains(&apos;myCssClass&apos;); // 返回 true 或者 false</span><br><span class="line">div.classList.item(0); // 返回第一个 Class</span><br><span class="line">div.classList.toString();</span><br></pre></td></tr></table></figure>
+
+<p>下面比较一下，<code>className</code>和<code>classList</code>在添加和删除某个 class 时的写法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var foo = document.getElementById(&apos;foo&apos;);</span><br><span class="line"></span><br><span class="line">// 添加class</span><br><span class="line">foo.className += &apos;bold&apos;;</span><br><span class="line">foo.classList.add(&apos;bold&apos;);</span><br><span class="line"></span><br><span class="line">// 删除class</span><br><span class="line">foo.classList.remove(&apos;bold&apos;);</span><br><span class="line">foo.className = foo.className.replace(/^bold$/, &apos;&apos;);</span><br></pre></td></tr></table></figure>
+
+<p><code>toggle</code>方法可以接受一个布尔值，作为第二个参数。如果为<code>true</code>，则添加该属性；如果为<code>false</code>，则去除该属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">el.classList.toggle(&apos;abc&apos;, boolValue);</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">if (boolValue) &#123;</span><br><span class="line">  el.classList.add(&apos;abc&apos;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  el.classList.remove(&apos;abc&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><p><code>Element.innerHTML</code>属性返回一个字符串，等同于该元素包含的所有 HTML 代码。该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括<code>&lt;HTML&gt;</code>和<code>&lt;body&gt;</code>元素。</p>
+<p>如果将<code>innerHTML</code>属性设为空，等于删除所有它包含的所有节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.innerHTML = &apos;&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="clientHeight，Element-clientWidth"><a href="#clientHeight，Element-clientWidth" class="headerlink" title="clientHeight，Element.clientWidth"></a>clientHeight，Element.clientWidth</h3><p><code>Element.clientHeight</code>属性返回一个整数值，表示元素节点的 CSS 高度（单位像素），只对块级元素生效，对于行内元素返回<code>0</code>。如果块级元素没有设置 CSS 高度，则返回实际高度。</p>
+<p>除了元素本身的高度，它还包括<code>padding</code>部分，但是不包括<code>border</code>、<code>margin</code>。如果有水平滚动条，还要减去水平滚动条的高度。注意，这个值始终是整数，如果是小数会被四舍五入。</p>
+<p><code>Element.clientWidth</code>属性返回元素节点的 CSS 宽度，同样只对块级元素有效，也是只包括元素本身的宽度和<code>padding</code>，如果有垂直滚动条，还要减去垂直滚动条的宽度。</p>
+<p><code>document.documentElement</code>的<code>clientHeight</code>属性，返回当前视口的高度（即浏览器窗口的高度），等同于<code>window.innerHeight</code>属性减去水平滚动条的高度（如果有的话）。<code>document.body</code>的高度则是网页的实际高度。一般来说，<code>document.body.clientHeight</code>大于<code>document.documentElement.clientHeight</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 视口高度</span><br><span class="line">document.documentElement.clientHeight</span><br><span class="line"></span><br><span class="line">// 网页总高度</span><br><span class="line">document.body.clientHeight</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/22/设置元素状态/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/instanceof/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/22/与数值相关的全局方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2019/11 | 嘿哈吼哈</title>
+  <title>嘿哈吼哈</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="取反运算符（!）取反运算符是一个感叹号，用于将布尔值变为相反值，即true变成false，false变成true。 12!true // false!false // true  对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为true，其他值都为false。  undefined null false 0 NaN 空字符串（&amp;#39;&amp;#39;）  1234567891">
+<meta property="og:type" content="article">
 <meta property="og:title" content="嘿哈吼哈">
-<meta property="og:url" content="https://mcqer.github.io/archives/2019/11/index.html">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/22/运算符/index.html">
 <meta property="og:site_name" content="嘿哈吼哈">
+<meta property="og:description" content="取反运算符（!）取反运算符是一个感叹号，用于将布尔值变为相反值，即true变成false，false变成true。 12!true // false!false // true  对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为true，其他值都为false。  undefined null false 0 NaN 空字符串（&amp;#39;&amp;#39;）  1234567891">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-19T13:01:43.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘿哈吼哈">
+<meta name="twitter:description" content="取反运算符（!）取反运算符是一个感叹号，用于将布尔值变为相反值，即true变成false，false变成true。 12!true // false!false // true  对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为true，其他值都为false。  undefined null false 0 NaN 空字符串（&amp;#39;&amp;#39;）  1234567891">
   
     <link rel="alternative" href="/atom.xml" title="嘿哈吼哈" type="application/atom+xml">
   
@@ -150,103 +154,216 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-运算符" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="取反运算符（-）"><a href="#取反运算符（-）" class="headerlink" title="取反运算符（!）"></a>取反运算符（!）</h2><p>取反运算符是一个感叹号，用于将布尔值变为相反值，即<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!true // false</span><br><span class="line">!false // true</span><br></pre></td></tr></table></figure>
+
+<p>对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为<code>true</code>，其他值都为<code>false</code>。</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>false</code></li>
+<li><code>0</code></li>
+<li><code>NaN</code></li>
+<li>空字符串（<code>&#39;&#39;</code>）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">!undefined // true</span><br><span class="line">!null // true</span><br><span class="line">!0 // true</span><br><span class="line">!NaN // true</span><br><span class="line">!&quot;&quot; // true</span><br><span class="line"></span><br><span class="line">!54 // false</span><br><span class="line">!&apos;hello&apos; // false</span><br><span class="line">![] // false</span><br><span class="line">!&#123;&#125; // false</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，不管什么类型的值，经过取反运算后，都变成了布尔值。</p>
+<p>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与<code>Boolean</code>函数的作用相同。这是一种常用的类型转换的写法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!!x</span><br><span class="line">// 等同于</span><br><span class="line">Boolean(x)</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，不管<code>x</code>是什么类型的值，经过两次取反运算后，变成了与<code>Boolean</code>函数结果相同的布尔值。所以，两次取反就是将一个值转为布尔值的简便写法。</p>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>三元条件运算符由问号（?）和冒号（:）组成，分隔三个表达式。它是 JavaScript 语言唯一一个需要三个运算子的运算符。如果第一个表达式的布尔值为<code>true</code>，则返回第二个表达式的值，否则返回第三个表达式的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;t&apos; ? &apos;hello&apos; : &apos;world&apos; // &quot;hello&quot;</span><br><span class="line">0 ? &apos;hello&apos; : &apos;world&apos; // &quot;world&quot;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码的<code>t</code>和<code>0</code>的布尔值分别为<code>true</code>和<code>false</code>，所以分别返回第二个和第三个表达式的值。</p>
+<p>通常来说，三元条件表达式与<code>if...else</code>语句具有同样表达效果，前者可以表达的，后者也能表达。但是两者具有一个重大差别，<code>if...else</code>是语句，没有返回值；三元条件表达式是表达式，具有返回值。所以，在需要返回值的场合，只能使用三元条件表达式，而不能使用<code>if..else</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(true ? &apos;T&apos; : &apos;F&apos;);</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>console.log</code>方法的参数必须是一个表达式，这时就只能使用三元条件表达式。如果要用<code>if...else</code>语句，就必须改变整个代码写法了。</p>
+<h2 id="void-运算符"><a href="#void-运算符" class="headerlink" title="void 运算符"></a>void 运算符</h2><p>这个运算符的主要用途是浏览器的书签工具（Bookmarklet），以及在超级链接中插入代码防止网页跳转。</p>
+<p>请看下面的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function f() &#123;</span><br><span class="line">  console.log(&apos;Hello World&apos;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;a href=&quot;http://example.com&quot; onclick=&quot;f(); return false;&quot;&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，点击链接后，会先执行<code>onclick</code>的代码，由于<code>onclick</code>返回<code>false</code>，所以浏览器不会跳转到 example.com。</p>
+<p><code>void</code>运算符可以取代上面的写法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript: void(f())&quot;&gt;文字&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个更实际的例子，用户点击链接提交表单，但是不产生页面跳转。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript: void(document.form.submit())&quot;&gt;</span><br><span class="line">  提交</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><p>小于等于（<code>&lt;=</code>)、严格相等（<code>===</code>）、或（<code>||</code>）、三元（<code>?:</code>）、等号（<code>=</code>）。因此上面的表达式，实际的运算顺序如下。</p>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><p>使用<code>Number</code>函数，可以将任意类型的值转化成数值。</p>
+<p>下面分成两种情况讨论，一种是参数是原始类型的值，另一种是参数是对象。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><p><code>String</code>函数可以将任意类型的值转化成字符串，转换规则如下。</p>
+<p><strong>1）原始类型值</strong></p>
+<ul>
+<li><strong>数值</strong>：转为相应的字符串。</li>
+<li><strong>字符串</strong>：转换后还是原来的值。</li>
+<li><strong>布尔值</strong>：<code>true</code>转为字符串<code>&quot;true&quot;</code>，<code>false</code>转为字符串<code>&quot;false&quot;</code>。</li>
+<li><strong>undefined</strong>：转为字符串<code>&quot;undefined&quot;</code>。</li>
+<li><strong>null</strong>：转为字符串<code>&quot;null&quot;</code>。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(123) // &quot;123&quot;</span><br><span class="line">String(&apos;abc&apos;) // &quot;abc&quot;</span><br><span class="line">String(true) // &quot;true&quot;</span><br><span class="line">String(undefined) // &quot;undefined&quot;</span><br><span class="line">String(null) // &quot;null&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>String</code>方法的参数如果是对象，返回一个类型字符串；如果是数组，返回该数组的字符串形式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String(&#123;a: 1&#125;) // &quot;[object Object]&quot;</span><br><span class="line">String([1, 2, 3]) // &quot;1,2,3&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean()"></a>Boolean()</h3><p><code>Boolean()</code>函数可以将任意类型的值转为布尔值。</p>
+<p>它的转换规则相对简单：除了以下五个值的转换结果为<code>false</code>，其他的值全部为<code>true</code>。</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>0</code>（包含<code>-0</code>和<code>+0</code>）</li>
+<li><code>NaN</code></li>
+<li><code>&#39;&#39;</code>（空字符串）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Boolean(undefined) // false</span><br><span class="line">Boolean(null) // false</span><br><span class="line">Boolean(0) // false</span><br><span class="line">Boolean(NaN) // false</span><br><span class="line">Boolean(&apos;&apos;) // false</span><br></pre></td></tr></table></figure>
+
+<p>非数值类型的值使用一元运算符（即<code>+</code>和<code>-</code>）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ &#123;foo: &apos;bar&apos;&#125; // NaN</span><br><span class="line">- [1, 2, 3] // NaN</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue-router/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:56.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue-router/">Vue-router</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/22/运算符/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/vue父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:46.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/数组/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/22/Object对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/vue父子组件通信/">vue父子组件通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/过滤器/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:37:27.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/过滤器/">Vue过滤器使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
