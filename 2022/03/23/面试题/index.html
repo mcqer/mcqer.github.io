@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mcqer.github.io">
-  <title>Archives: 2022 | 另外半只</title>
+  <title>JavaScript面试题 | 另外半只</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="另外半只">
-<meta property="og:url" content="https://mcqer.github.io/archives/2022/index.html">
+  <meta name="description" content="JavaScript面试题 ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面试题">
+<meta property="og:url" content="https://mcqer.github.io/2022/03/23/面试题/index.html">
 <meta property="og:site_name" content="另外半只">
+<meta property="og:description" content="JavaScript面试题 ​">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-23T10:52:03.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="另外半只">
+<meta name="twitter:title" content="JavaScript面试题">
+<meta name="twitter:description" content="JavaScript面试题 ​">
   
     <link rel="alternative" href="/atom.xml" title="另外半只" type="application/atom+xml">
   
@@ -150,292 +154,398 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-面试题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JavaScript面试题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/23/面试题/" class="archive-article-date">
+
+        
+        <a href="/2022/03/23/面试题/" class="archive-article-date">
   	<time datetime="2022-03-23T10:50:15.213Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/23/面试题/">JavaScript面试题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> JavaScript面试题</p>
+<p>​    <a id="more"></a></p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>基本类型</p>
+<p>Number、String、Boolean、Null、undefined、Symol、bigInt</p>
+<p>引用的数据类型</p>
+<p>Object、Array、Date、Function、RegExp</p>
+<h3 id="Js变量和函数的声明提升"><a href="#Js变量和函数的声明提升" class="headerlink" title="Js变量和函数的声明提升"></a>Js变量和函数的声明提升</h3><p>在js中变量和函数的声明会提示到最顶部执行</p>
+<p>函数的提升高于变量的提升</p>
+<p>函数内部如果使用var声明了相同名称的外部变量，函数则不再向上寻找</p>
+<p>匿名函数不会提升</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包就是能够读取其他函数内部变量的函数，</p>
+<p>闭包基本上就是一个函数内部返回一个函数</p>
+<h4 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h4><p>可以读取函数内部的变量</p>
+<p>将变量始终保持在内存中</p>
+<p>可以封装对象的私有属性和私有方法</p>
+<h4 id="坏处"><a href="#坏处" class="headerlink" title="坏处"></a>坏处</h4><p>比较耗费内存，使用不当会造成内存溢出的问题</p>
+<h3 id="和-的区别"><a href="#和-的区别" class="headerlink" title="==和===的区别"></a>==和===的区别</h3><p>==是非严格意义的相等</p>
+<p>值相等就相等</p>
+<p>===是严格意义的相等，会比较两边数据类型和值大小</p>
+<p>值和引用地址相等才相等</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>this总是指向函数的直接调用者</p>
+<p>如果有new关键字，this指向new出来的对象</p>
+<p>在事件中，this指向触发这个事件的对象</p>
+<p>解决this指向的问题 定义that</p>
+<h3 id="js数组和对象的遍历方法"><a href="#js数组和对象的遍历方法" class="headerlink" title="js数组和对象的遍历方法"></a>js数组和对象的遍历方法</h3><p>for  in   </p>
+<p>for</p>
+<p>for…in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。<br>for in得到对对象的key或数组,字符串的下标</p>
+<p>foEach</p>
+<p>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。</p>
+<p><strong>注意:</strong> forEach() 对于空数组是不会执行回调函数的。</p>
+<p>for-of</p>
+<p>for…of循环可以使用的范围包括数组、Set 和 Map 结构、某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、后文的 Generator 对象，以及字符串</p>
+<h3 id="map与foEach的区别"><a href="#map与foEach的区别" class="headerlink" title="map与foEach的区别"></a>map与foEach的区别</h3><p>forEach的方法，最基本的，循环与遍历，默认三个传参，遍历的数组内容，item 数组索引index 和当前遍历数组Array</p>
+<p>map基本用法与foEach一致，但是不同的是，它会返回一个新的数组，所以callback需要return的值，如果没有则会发挥undefined </p>
+<h3 id="箭头函数与普通函数的区别"><a href="#箭头函数与普通函数的区别" class="headerlink" title="箭头函数与普通函数的区别"></a>箭头函数与普通函数的区别</h3><p>普通函数</p>
+<p><strong>一、普通函数中this</strong></p>
+<p>（1）总是代表着它的直接调用者，如obj.fn，fn里的最外层this就是指向obj</p>
+<p>（2）默认情况下，没有直接调用者，this指向window</p>
+<p>（3）严格模式下（设置了’use strict’），this为undefined</p>
+<p>（4）当使用call，apply，bind（ES5新增）绑定的，this指向绑定对象</p>
+<p>箭头函数体内的this对象，就是定义所在的对象，而不是使用时所在的对象</p>
+<p>不可以当做构造函数，不可以使用new命令，否则会报错</p>
+<p>不可以使用arguments对象，该对象在函数内不存在，如果要用，可以用Rest参数替代</p>
+<p>不可使用yiedl命令，因此箭头函数不能用作Generator函数</p>
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p>同源指的是同域名，协议，端口号</p>
+<h3 id="如何解决跨域"><a href="#如何解决跨域" class="headerlink" title="如何解决跨域"></a>如何解决跨域</h3><p>jsonp跨域</p>
+<p>node.js中间件代理跨域</p>
+<p>document.domain+iframe跨域</p>
+<p>后端在头部信息里面设置安全域名</p>
+<h3 id="严格模式的限制"><a href="#严格模式的限制" class="headerlink" title="严格模式的限制"></a>严格模式的限制</h3><p>变量必须声明后再使用</p>
+<p>函数的参数不能有同名属性，否则保存</p>
+<p>不能使用with语句</p>
+<p>禁止this指向全局对象</p>
+<h3 id="es6新增"><a href="#es6新增" class="headerlink" title="es6新增"></a>es6新增</h3><p>新增模板字符串</p>
+<p>箭头函数</p>
+<p>for-of</p>
+<p>ES6将Promise对象纳入规范，提供原生的Promise对象</p>
+<p>增加了let和const命令，声明变量</p>
+<p>引入了module模块的概念</p>
+<h3 id="attribute与property的区别是什么"><a href="#attribute与property的区别是什么" class="headerlink" title="attribute与property的区别是什么"></a>attribute与property的区别是什么</h3><p>attribute是dom元素在文档中作为html标签拥有的属性</p>
+<p>property就是dom元素在js中作为对象拥有的属性</p>
+<p>对于html的标志属性来说，attribute和property是同步的，是会自动更新的</p>
+<p>但对于自定义的属性来说，他们是不同步的</p>
+<h3 id="let-const的区别是什么"><a href="#let-const的区别是什么" class="headerlink" title="let const的区别是什么"></a>let const的区别是什么</h3><p>let命令不存在变量提升，在let前使用，会导致报错</p>
+<p>如果 块区中存在let和const命令，则会形成封闭作用域</p>
+<p>不允许重复声明</p>
+<p>const定义的是常量，不能修改，若定义为对象，则可以修改对象内部的数据</p>
+<h3 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h3><p>定义： 程序中已动态分配的堆内存由于某种原因程序未释放或无法释放引发的各种问题</p>
+<p>js可能会出现内存泄露的情况：结果 变慢，崩溃，延迟大</p>
+<p>js可能会导致内存泄露的情况</p>
+<p>全局变量</p>
+<p>dom清空时，还存在引用</p>
+<p>定时器未清除</p>
+<p>子元素存在引起的内存泄露</p>
+<h3 id="数组Array的方法"><a href="#数组Array的方法" class="headerlink" title="数组Array的方法"></a>数组Array的方法</h3><h4 id="Array-push（）"><a href="#Array-push（）" class="headerlink" title="Array.push（）"></a>Array.push（）</h4><p>从数组后面添加元素，返回值为添加后数组的长度</p>
+<h4 id="Array-pop"><a href="#Array-pop" class="headerlink" title="Array.pop()"></a>Array.pop()</h4><p>从后面删除元素，只能是一个，返回值为删除的元素</p>
+<h4 id="Array-shift（）"><a href="#Array-shift（）" class="headerlink" title="Array.shift（）"></a>Array.shift（）</h4><p>从前面删除元素，只能删除一个，返回值为删除的元素</p>
+<h4 id="Array-unshift"><a href="#Array-unshift" class="headerlink" title="Array.unshift()"></a>Array.unshift()</h4><p>从前面添加元素，返回值为添加后的长度</p>
+<h4 id="Array-splice-i-n"><a href="#Array-splice-i-n" class="headerlink" title="Array.splice(i,n)"></a>Array.splice(i,n)</h4><p>删除从i(索引值)开始后的那个元素，返回值为删除的元素    </p>
+<p>i为索引值</p>
+<p>n为删除的个数</p>
+<h4 id="Array-conat"><a href="#Array-conat" class="headerlink" title="Array.conat()"></a>Array.conat()</h4><p>连接两个数组。返回值为连接后的新数组</p>
+<h4 id="Array-sort"><a href="#Array-sort" class="headerlink" title="Array.sort()"></a>Array.sort()</h4><p>将数组进行排序，默认为从最左边的数字进行排序，而不是安装数字大小排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,10,6,1,4,22,3]</span><br><span class="line">console.log(arr.sort())   // [1, 10, 2, 22, 3, 4, 6]</span><br><span class="line">let arr1 = arr.sort((a, b) =&gt;a - b)  </span><br><span class="line">console.log(arr1)   // [1, 2, 3, 4, 6, 10, 22]</span><br><span class="line">let arr2 = arr.sort((a, b) =&gt;b-a)  </span><br><span class="line">console.log(arr2)  // [22, 10, 6, 4, 3, 2, 1]</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="Array-reverse"><a href="#Array-reverse" class="headerlink" title="Array.reverse()"></a>Array.reverse()</h4><p>将数组反转，返回值为反转后的数组</p>
+<h4 id="Array-slice-start-end"><a href="#Array-slice-start-end" class="headerlink" title="Array.slice(start,end)"></a>Array.slice(start,end)</h4><p>切去索引值start到索引值end的数组，不包含end索引的值，返回值为切出来额数组</p>
+<h4 id="Array-foEach（callback）"><a href="#Array-foEach（callback）" class="headerlink" title="Array.foEach（callback）"></a>Array.foEach（callback）</h4><p>遍历数组，无return  即使有return也不会返回任何值，并且会影响原来的数组callback的参数为：</p>
+<p>value–但钱索引的值</p>
+<p>index索引</p>
+<p>array 原数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.forEach( <span class="function">(<span class="params">value,index,array</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`value:<span class="subst">$&#123;value&#125;</span>    index:<span class="subst">$&#123;index&#125;</span>     array:<span class="subst">$&#123;array&#125;</span>`</span>)</span><br><span class="line">&#125;)   </span><br><span class="line"><span class="comment">//  value:1    index:0     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">//  value:2    index:1     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">//  value:3    index:2     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">//  value:4    index:3     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">//  value:5    index:4     array:1,2,3,4,5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.forEach( <span class="function">(<span class="params">value,index,array</span>)=&gt;</span>&#123;</span><br><span class="line">    value = value * <span class="number">2</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`value:<span class="subst">$&#123;value&#125;</span>    index:<span class="subst">$&#123;index&#125;</span>     array:<span class="subst">$&#123;array&#125;</span>`</span>)</span><br><span class="line">&#125;)   </span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br><span class="line"><span class="comment">// value:2    index:0     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">// value:4    index:1     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">// value:6    index:2     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">// value:8    index:3     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">// value:10   index:4     array:1,2,3,4,5</span></span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]; </span><br><span class="line"><span class="keyword">var</span> res = arr.forEach(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;     </span><br><span class="line"> arr[index] = item * <span class="number">2</span>; </span><br><span class="line"> <span class="keyword">return</span> arr </span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [2,4,6,8]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
+<p>Array.map（callback）</p>
+<p>遍历数组，返回一个新数组</p>
+<p>callback的参数为：</p>
+<p>value 当前索引的值  </p>
+<p>index  索引</p>
+<p>array 原数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.map( <span class="function">(<span class="params">value,index,array</span>)=&gt;</span>&#123;</span><br><span class="line">        value = value * <span class="number">2</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`value:<span class="subst">$&#123;value&#125;</span>    index:<span class="subst">$&#123;index&#125;</span>     array:<span class="subst">$&#123;array&#125;</span>`</span>)</span><br><span class="line">&#125;)   </span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]; </span><br><span class="line"><span class="keyword">var</span> res1 = arr1.map(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123; </span><br><span class="line"> item = item * <span class="number">3</span>; </span><br><span class="line"> <span class="keyword">return</span> item; </span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(res1); <span class="comment">// [3,6,9,12]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-filter-callback"><a href="#Array-filter-callback" class="headerlink" title="Array.filter(callback)"></a>Array.filter(callback)</h4><p>过滤数组，返回一个满足要求的舒服</p>
+<p>callbackd  参数</p>
+<p>value –当前索引的值</p>
+<p>index  —–索引</p>
+<h4 id="Array-some"><a href="#Array-some" class="headerlink" title="Array.some()"></a>Array.some()</h4><p>依据判断条件，数组的元素是否有一个满足，若有一个满足则返回true</p>
+<p>callback的参数</p>
+<p>value  当前索引的值</p>
+<p>inde  索引</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.some( <span class="function">(<span class="params">value, index</span>) =&gt;</span>value&lt;<span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.some( <span class="function">(<span class="params">value, index</span>) =&gt;</span>value&gt;<span class="number">6</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-reduce-callback-initialValue"><a href="#Array-reduce-callback-initialValue" class="headerlink" title="Array.reduce(callback initialValue)"></a>Array.reduce(callback initialValue)</h4><p>迭代数组的所有项，累加器，从数组的中的每个值，从左到右合并，最终为一个值</p>
+<p>callback </p>
+<p>previousValue  上一次调用返回的值</p>
+<p>currentValue 数组中当前被处理的数组项</p>
+<p>index 当前数组项在数组中的索引值</p>
+<p>array 原数组</p>
+<p>initialValue 回调函数的第一次执行， preValue 和 curValue 可以是一个值，如果 initialValue 在调用 reduce() 时被提供，那么第一个 preValue 等于 initialValue ，并且curValue 等于数组中的第一个值；如果initialValue 未被提供，那么preValue 等于数组中的第一个值.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.reduce(<span class="function">(<span class="params">preValue, curValue</span>) =&gt;</span> </span><br><span class="line">    preValue + curValue</span><br><span class="line">)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)    <span class="comment">// 10</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.reduce(<span class="function">(<span class="params">preValue,curValue</span>)=&gt;</span>preValue + curValue,<span class="number">5</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2)    <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-reduce-扩展"><a href="#Array-reduce-扩展" class="headerlink" title="Array.reduce() 扩展"></a>Array.reduce() 扩展</h4><p>（1）计算每个元素出现的次数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">'peter'</span>, <span class="string">'tom'</span>, <span class="string">'mary'</span>, <span class="string">'bob'</span>, <span class="string">'tom'</span>,<span class="string">'peter'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> nameNum = names.reduce(<span class="function">(<span class="params">pre,cur</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(cur <span class="keyword">in</span> pre)&#123;</span><br><span class="line">    pre[cur]++</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    pre[cur] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pre</span><br><span class="line">&#125;,&#123;&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(nameNum); <span class="comment">//&#123; peter: 2, tom: 2, mary: 1, bob: 1 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）数组去重</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> newArray =arr.reduce(<span class="function">(<span class="params">pre,cur</span>)=&gt;</span>&#123;</span><br><span class="line"><span class="keyword">if</span>(!pre.includes(cur))&#123;</span><br><span class="line"><span class="keyword">return</span> pre.concat(cur)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> pre</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;,[])</span><br><span class="line"><span class="built_in">console</span>.log(newArray)</span><br></pre></td></tr></table></figure>
+
+<p>（3）将多维数组换为一维</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]]]</span><br><span class="line"><span class="keyword">const</span> newArr = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">pre,cur</span>)=&gt;</span>pre.concat(<span class="built_in">Array</span>.isArray(cur)?newArr(cur):cur),[])</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(newArr(arr)); <span class="comment">//[0, 1, 2, 3, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-indexOf（）"><a href="#Array-indexOf（）" class="headerlink" title="Array.indexOf（）"></a>Array.indexOf（）</h4><p>查找元素的索引值 若有重复则返回第一个查到的索引值，若不存在则返回-1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.indexOf(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.indexOf(<span class="number">9</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2)  <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-lastIndexOf"><a href="#Array-lastIndexOf" class="headerlink" title="Array.lastIndexOf()"></a>Array.lastIndexOf()</h4><p>与indexOf相同 不过从后面开始查找</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.lastIndexOf(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)  <span class="comment">// 5</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.lastIndexOf(<span class="number">9</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2)  <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h4><p>伪数组变为数组，只要有length就可以转成数组es6</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'12345'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(str))    <span class="comment">// ["1", "2", "3", "4", "5"]</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;<span class="number">0</span>:<span class="string">'a'</span>,<span class="number">1</span>:<span class="string">'b'</span>,<span class="attr">length</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(obj))   <span class="comment">// ["a", "b"]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h4><p>将一组数组转为数组，类似于声明数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;11&apos;</span><br><span class="line">console.log(Array.of(str))   // [&apos;11&apos;]</span><br><span class="line">// 等价于</span><br><span class="line">console.log(new Array(&apos;11&apos;))  // [&apos;11]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-copyWithin"><a href="#Array-copyWithin" class="headerlink" title="Array.copyWithin()"></a>Array.copyWithin()</h4><p>在当前数组的内部，将制定位置的数组复制到其他位置，会覆盖原数组项，返回当前数组参数</p>
+<p>traget  索引从该位置开始替换数组项</p>
+<p>start 可选  从该位置读取数组项，默认为0  若为负 ，则从右向左读取</p>
+<p>end 可选 索引到该位置停止读取的数组项，默认为Array.length 如果为赋值，表示倒数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.copyWithin(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)   <span class="comment">// [1, 1, 2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.copyWithin(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2)   <span class="comment">// [1, 3, 4, 5, 6, 7, 7]</span></span><br><span class="line"><span class="keyword">let</span> arr3 = arr.copyWithin(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr3)   <span class="comment">// [1, 3, 4, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-find-callback"><a href="#Array-find-callback" class="headerlink" title="Array.find(callback)"></a>Array.find(callback)</h4><p>找出符合条件的数组成员</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.find(<span class="function">(<span class="params">value, index, array</span>) =&gt;</span>value &gt; <span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)   <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-findIndex-callback"><a href="#Array-findIndex-callback" class="headerlink" title="Array.findIndex(callback)"></a>Array.findIndex(callback)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.findIndex(<span class="function">(<span class="params">value, index, array</span>) =&gt;</span> value &gt; <span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-fill"><a href="#Array-fill" class="headerlink" title="Array.fill()"></a>Array.fill()</h4><p>使用给定的值，填充一个数组,ps:填充完后会改变原数组<br>参数：</p>
+<ul>
+<li>target – 待填充的元素</li>
+<li>start – 开始填充的位置-索引</li>
+<li>end – 终止填充的位置-索引（不包括该位置)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.fill(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr1)  <span class="comment">// [5, 5, 5, 5, 5]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr)   <span class="comment">// [5, 5, 5, 5, 5]</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr.fill(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2)</span><br><span class="line"><span class="keyword">let</span> arr3 = arr.fill(<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr3)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-includes"><a href="#Array-includes" class="headerlink" title="Array.includes()"></a>Array.includes()</h4><p>判断数组中是否含有给定的值</p>
+<p>与indexOf（）区别为  indexof返回的是数值  </p>
+<p>includes 返回的为布尔值</p>
+<h4 id="Array-keys"><a href="#Array-keys" class="headerlink" title="Array,keys()"></a>Array,keys()</h4><p>遍历数组的键名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr.keys()</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> arr2) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key);   <span class="comment">// 0,1,2,3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Array.entries()</p>
+<p>遍历数组的键名和键值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.entries()</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> e <span class="keyword">of</span> arr1) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e);   <span class="comment">// [0,1] [1,2] [2,3] [3,4]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="str-split"><a href="#str-split" class="headerlink" title="str.split()"></a>str.split()</h4><p>字符串转为数组</p>
+<h3 id="异步编程的实现过程"><a href="#异步编程的实现过程" class="headerlink" title="异步编程的实现过程"></a>异步编程的实现过程</h3><h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>优点：简单，容易理解</p>
+<p>缺点：不利于维护，代码耦合度高</p>
+<h4 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h4><p>优点： 容易理解，可以绑定多个事件，每个事件可以指定多个回调函数</p>
+<p>缺点： 事件驱动型，流程不够清晰</p>
+<h4 id="发布-订阅-观察者模式"><a href="#发布-订阅-观察者模式" class="headerlink" title="发布/订阅(观察者模式)"></a>发布/订阅(观察者模式)</h4><p>类似于事件监听 </p>
+<h4 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h4><p>Promise对象是为了简化异步编程。解决回调地狱情况。</p>
+<p>一个Promise对象代表着一个还未完成，但预期将来会完成的操作。这样表示了<code>一旦用了promise对象，就不能退出，直到出现结果为止（resloved或rejected）</code></p>
+<p>优点:可以使用then方法，进行链式写法，</p>
+<p>缺点：编写和理解相对困难</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// .... some coding</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>)&#123;   <span class="comment">// 异步操作成功</span></span><br><span class="line">        resolve(value);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">promise.then(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 成功的回调函数</span></span><br><span class="line">&#125;, error=&gt;&#123;</span><br><span class="line">    <span class="comment">// 失败后的回调函数</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> promise) <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+
+<p>params:传参是一个回调函数。这个回调函数有两个参数resolve和reject。</p>
+<ul>
+<li>resolve: 将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去。(简单来说就是<code>成功了的执行</code>)</li>
+<li>reject: 将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。(简单来说就是<code>失败了的执行</code>)</li>
+<li>promise之后then的参数：<ul>
+<li>第一个参数是成功的回调函数，必选</li>
+<li>第二个参数是失败的回调函数,可选</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 成功时</span></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'开始'</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">2</span> &gt; <span class="number">1</span>)&#123;   <span class="comment">// 异步操作成功</span></span><br><span class="line">        resolve(&#123;<span class="attr">name</span>:<span class="string">'peter'</span>,<span class="attr">age</span>:<span class="number">25</span>&#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">promise.then(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 成功的回调函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;, error=&gt;&#123;</span><br><span class="line">    <span class="comment">// 失败后的回调函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 开始</span></span><br><span class="line"><span class="comment">// &#123;name: "peter", age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="promise对象的特点"><a href="#promise对象的特点" class="headerlink" title="promise对象的特点"></a>promise对象的特点</h5><p>对象的状态不受外界影响，Promise对象代表一个异步操作，有三种状态pending（进行中）、 fulfilled（已成功）和rejected（已失败）可以决定当前是哪一种状态，任何操作都无法改变这个状态</p>
+<p>一单状态改变，就不会再变，任何时候都可以得到这个结果，成功了一直就是成功的状态，失败了就一直是失败的状态</p>
+<h4 id="Promise-封装AJAX"><a href="#Promise-封装AJAX" class="headerlink" title="Promise 封装AJAX"></a>Promise 封装AJAX</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getJSON = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> handler = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">                resolve(<span class="keyword">this</span>.response);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="keyword">this</span>.statusText));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">const</span> client = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        client.open(<span class="string">"GET"</span>, url);</span><br><span class="line">        client.onreadystatechange = handler;</span><br><span class="line">        client.responseType = <span class="string">"json"</span>;</span><br><span class="line">        client.setRequestHeader(<span class="string">"Accept"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        client.send();</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">getJSON(<span class="string">"xxxxx"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Contents: '</span> + value);</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'出错了'</span>, error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="面向对象的编程思想"><a href="#面向对象的编程思想" class="headerlink" title="面向对象的编程思想"></a>面向对象的编程思想</h3><p>基本思想就是使用对象，类，继承，的等基本概念进行程序设计</p>
+<p>优点</p>
+<p>易维护</p>
+<p>易扩展</p>
+<p>开发工作的重用性，继承性高，降低重复工作量</p>
+<p>缩短了开发周期</p>
+<h3 id="项目性能优化"><a href="#项目性能优化" class="headerlink" title="项目性能优化"></a>项目性能优化</h3><p>减少HTTP请求数</p>
+<p>减少DNS查询</p>
+<p>使用CDN</p>
+<p>避免重定向</p>
+<p>图片懒加载</p>
+<p>减少DOM元素数量</p>
+<p>减少DOM操作</p>
+<p>使用外部的JavaScript和CSS</p>
+<p>优化CSS</p>
+<p>使用iconfont</p>
+<p>避免图片src为空</p>
+<p>把JavaScript放在底部</p>
+<h3 id="什么是单线程，和异步的关系"><a href="#什么是单线程，和异步的关系" class="headerlink" title="什么是单线程，和异步的关系"></a>什么是单线程，和异步的关系</h3><p>单线程：只有一个线程，只能做一件事</p>
+<p>原因： 避免DOM渲染的冲突</p>
+<p>浏览器需要渲染DOM</p>
+<p>JavaScript可以修改DOM结构</p>
+<p>JavaScript执行的时候，浏览器DOM渲染会暂停</p>
+<p>两段JavaScript也不能同时执行</p>
+<p>解决方案-异步</p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>多台服务器共同写作。不让其中一台或者几台超额工作，发挥服务器的最大作用</p>
+<p>http重定向负载均衡，调度者根据策略选择服务器以302响应请求</p>
+<p>反向代理复制均衡</p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>作用域链可以理解为一组对象列表，包含父级和自身的变量对象，因此我们使能够通过作用域链访问到父级声明的变量或者函数</p>
+<h3 id="什么是原型，原型链、继承"><a href="#什么是原型，原型链、继承" class="headerlink" title="什么是原型，原型链、继承"></a>什么是原型，原型链、继承</h3><p>所有的函数都有prototype属性（原型）</p>
+<p>所有的对象都有    _ proto _  属性</p>
+<p>在JavaScript中，每个函数都有一个原型属性prototype指向自身的原型，而由这个函数创建的对象也有一个proto属性指向这个原型，而函数的原型是一个对象，所以这个对象也会有一个proto指向自己的原型，这样逐渐深入直到Object对象的原型，这样就形成了原型链</p>
+<h3 id="JavaScript垃圾回收机制"><a href="#JavaScript垃圾回收机制" class="headerlink" title="JavaScript垃圾回收机制"></a>JavaScript垃圾回收机制</h3><p>1.概述</p>
+<p>JavaScript的垃圾回收机制是为了防止内存泄露，垃圾回收机制就是不停歇的寻找这些不在使用的变量，并且释放掉它指向的内存</p>
+<p>2.变量的生命周期</p>
+<p>当一个变量的生命周期结束之后，它所指向的内存就会被释放，JavaScript有两种变量，局部变量和全局变量，局部变量是在他当前的函数中产生作用，当函数结束以后，该变量的内存就会被释放，全局变量的话就会一直存在，直到浏览器关闭</p>
+<p>3.JavaScript垃圾回收方式</p>
+<p>标记清除 ：</p>
+<p>大部分浏览器都使用这种垃圾回收，当变量进入执行环节的时候，垃圾回收器将该变量进行了标记，当该变量离开环节的时候，将其在读标记，随之进行删除</p>
+<p>引用计数：</p>
+<p>这种方式尝尝会引起内存的泄露，主要存在于低版本的浏览器，它的机智就是跟踪某一个值的引用次数，当声明一个变量并且将一个引用类型赋值给变量的时候引用次数加1，当这个变量指向其他一个时引用次数减1，当为0时触发回收机制进行回收</p>
+<h3 id="递进增强和优雅降级"><a href="#递进增强和优雅降级" class="headerlink" title="递进增强和优雅降级"></a>递进增强和优雅降级</h3><p>逐进增强</p>
+<p>针对低版本的浏览器进行构建页面，保证最基本的功能，然后再针对高版本的浏览器进行效果，交互等带来更好的用户体验</p>
+<p>优雅降级</p>
+<p>一开始就构建完整的功能，然后在针对低版本浏览器进行兼容</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mcqer.github.io/2022/03/23/面试题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/instanceof/" class="archive-article-date">
-  	<time datetime="2022-03-22T12:37:33.231Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/22/instanceof/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">instanceof</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/instanceof/">instanceof</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/对象/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.871Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/对象/">对象的一些文档</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/函数的使用/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/函数的使用/">一些函数的东西</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/运算符/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.835Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/运算符/">一些运算符的使用方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/Object对象/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.814Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/Object对象/">Object对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/New命令/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.812Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/New命令/">New命令的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/this/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.810Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/this/">this的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/设置元素状态/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.803Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/设置元素状态/">设置元素状态</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/22/与数值相关的全局方法/" class="archive-article-date">
-  	<time datetime="2022-03-22T09:58:21.780Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/22/与数值相关的全局方法/">数值有关的全局方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -458,8 +568,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
